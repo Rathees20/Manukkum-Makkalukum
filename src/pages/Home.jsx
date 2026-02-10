@@ -19,7 +19,7 @@ const Home = () => {
           <div className="hero-content">
             <p className="hero-kicker">Welcome to</p>
             <h1>
-              <span className="highlight">Mannukkum Makkalukum</span>
+              <span className="highlight">மண்ணுக்கும் மக்களுக்கும்</span>
             </h1>
             <p className="hero-text">
               Planting trees for a greener tomorrow and building kinder,
