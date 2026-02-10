@@ -121,21 +121,31 @@ body {
 /* Hero */
 
 .hero {
+  position: relative; /* Added for overlay positioning */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 60px 0; /* Added vertical padding */
+  margin-top: -16px; /* Offset .app padding top */
+  margin-bottom: 40px;
+  overflow: hidden; /* Clip the overlay */
+  /* Removed border and shadow from container for full-width look */
+}
+
+.hero-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: grid;
   grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
   gap: 20px;
-  margin-top: 16px;
-  margin-bottom: 40px;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 24px;
-  border-radius: 24px;
-  background: radial-gradient(circle at top left, rgba(35, 67, 47, 0.9), rgba(5, 13, 8, 0.95) 55%);
-  border: 1px solid rgba(50, 108, 72, 0.9);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+  /* Removed background/border/shadow from here to let main hero bg show */
+  padding: 10px; 
 }
 
 .hero-kicker {
@@ -147,9 +157,10 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(28px, 3vw + 10px, 40px);
+  font-size: clamp(32px, 4vw + 12px, 48px); /* Increased size */
   line-height: 1.2;
   margin: 0 0 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Added shadow for readability */
 }
 
 .highlight {
@@ -157,9 +168,9 @@ body {
 }
 
 .hero-text {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 16px;
+  font-size: 16px; /* Increased slightly */
+  color: #e0eadd; /* Lighter text for better contrast on image */
+  margin-bottom: 20px;
 }
 
 .hero-actions {
@@ -171,7 +182,7 @@ body {
 
 .hero-note {
   font-size: 12px;
-  color: var(--muted);
+  color: rgba(245, 255, 249, 0.7); /* Adjusted color */
   border-left: 2px solid var(--accent);
   padding-left: 8px;
 }
@@ -179,29 +190,37 @@ body {
 /* Hero side card */
 
 .hero-card {
-  padding: 20px;
+  position: relative; /* Ensure stacking */
+  z-index: 1;
+  padding: 30px; /* Increased padding */
   border-radius: 24px;
-  background: radial-gradient(circle at top, #0e2619, #020806 65%);
-  border: 1px solid rgba(44, 96, 66, 0.9);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599307337250-9884e6eeec01?auto=format&fit=crop&w=600&q=80');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(45, 211, 138, 0.3); /* Lighter border */
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 
 .hero-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
+  font-size: 20px;
+  color: var(--accent);
 }
 
 .hero-card p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 12px;
+  font-size: 14px;
+  color: #d1e0d6; /* Light text */
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
 
 .hero-card ul {
   margin: 0;
   padding-left: 18px;
   font-size: 13px;
-  color: var(--text);
+  color: #fff;
 }
 
 /* Sections */
@@ -295,17 +314,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0; /* Changed from -1 to 0 to be part of the stacking context */
   overflow: hidden;
-  border-radius: 24px;
 }
 
 .hero-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.15;
-  filter: saturate(0.5) brightness(0.8);
+  opacity: 0.6; /* Increased opacity for better visibility */
+  filter: brightness(0.4); /* Darken image to ensure text readability */
 }
 
 .about-img {

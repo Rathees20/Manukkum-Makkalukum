@@ -11,9 +11,10 @@ const Programs = () => {
       <div className="card-grid">
         <div className="card">
           <img 
-            src="https://images.unsplash.com/photo-1599307337250-9884e6eeec01?auto=format&fit=crop&w=600&q=80" 
+            src="/images/p4.jpeg" 
             alt="Sapling Drive" 
             className="card-img-top"
+            style={{ objectPosition: "top" }}
           />
           <h3>1. Sapling Drives Everywhere</h3>
           <p>
@@ -30,9 +31,10 @@ const Programs = () => {
 
         <div className="card">
           <img 
-            src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" 
+            src="/images/p3.jpeg" 
             alt="Soil and Water" 
             className="card-img-top"
+             style={{ objectPosition: "top" }}
           />
           <h3>2. Soil &amp; Water Stewardship</h3>
           <p>
@@ -48,9 +50,10 @@ const Programs = () => {
 
         <div className="card">
           <img 
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" 
+            src="/images/p2.jpeg" 
             alt="Community Outreach" 
             className="card-img-top"
+             style={{ objectPosition: "top" }}
           />
           <h3>3. People &amp; Welfare Outreach</h3>
           <p>
