@@ -1,7 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (hash) => {
+    window.location.hash = hash;
+    setMenuOpen(false);
+  };
+
   return (
     <header className="navbar">
       <div className="navbar-left">
@@ -13,13 +19,24 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <nav className="navbar-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#impact">Impact</a>
-        <a href="#get-involved">Get Involved</a>
-        <a href="#contact">Contact</a>
+      <button
+        className={`navbar-toggle ${menuOpen ? "open" : ""}`}
+        aria-label="Toggle navigation menu"
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <nav className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        <button onClick={() => handleNavClick("#home")}>Home</button>
+        <button onClick={() => handleNavClick("#about")}>About</button>
+        <button onClick={() => handleNavClick("#programs")}>Programs</button>
+        <button onClick={() => handleNavClick("#impact")}>Impact</button>
+        <button onClick={() => handleNavClick("#get-involved")}>
+          Get Involved
+        </button>
+        <button onClick={() => handleNavClick("#contact")}>Contact</button>
       </nav>
     </header>
   );

@@ -8,9 +8,9 @@ const Home = () => {
     <div className="page" id="home">
       <section className="hero">
         <div className="hero-image-overlay">
-          <img 
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80" 
-            alt="Lush green reforestation" 
+          <img
+            src="/image3.jpeg"
+            alt="Green landscape representing reforestation"
             className="hero-bg-img"
           />
         </div>
@@ -45,9 +45,9 @@ const Home = () => {
         </div>
 
         <div className="hero-card">
-          <img 
-            src="https://images.unsplash.com/photo-1599307337250-9884e6eeec01?auto=format&fit=crop&w=600&q=80" 
-            alt="Planting a sapling" 
+          <img
+            src="/image4.jpeg"
+            alt="Volunteer planting a sapling"
             className="card-img-top"
           />
           <h3>Planting a Future</h3>

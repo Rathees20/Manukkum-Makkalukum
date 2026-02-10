@@ -11,37 +11,52 @@ const About = () => {
       <div className="two-column">
         <div>
           <h3>Our Story</h3>
-          <img 
-            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" 
-            alt="Inspired leadership" 
+          <img
+            src="/image1.jpeg"
+            alt="Actor M. Soundara Raja planting a sapling"
             className="about-img"
           />
           <p>
             With the guiding vision of improving both{" "}
             <strong>the wealth of the soil</strong> and{" "}
-            <strong>the welfare of the people</strong>, Actor M. Soundara Raja
-            started the social welfare foundation{" "}
+            <strong>the welfare of the people</strong>, actor M. Soundara Raja
+            founded the social welfare initiative{" "}
             <strong>“For the Land and the People”</strong>.
           </p>
           <p>
-            From film sets to remote villages, he has made it a habit to{" "}
-            <strong>plant saplings wherever he sets foot</strong> and leave
-            behind living symbols of hope.
+            What began as a simple habit of{" "}
+            <strong>planting a sapling wherever he sets foot</strong>—from film
+            sets to remote villages—has grown into a collective movement that
+            brings volunteers, farmers, students, and local leaders together.
+          </p>
+          <p>
+            Today, every tree planted and every village reached is meant to be a
+            living symbol of hope, reminding us that caring for the land is the
+            first step to caring for our people.
           </p>
         </div>
         <div>
           <h3>Our Vision</h3>
-          <img 
-            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80" 
-            alt="Fertile soil and growth" 
+          <img
+            src="/image2.jpeg"
+            alt="Thriving green farmland and healthy soil"
             className="about-img"
           />
+          <p>
+            The foundation focuses on long-term, practical work that strengthens
+            both the environment and the communities that depend on it.
+          </p>
           <ul className="bullet-list">
             <li>Regenerate degraded lands with native trees and plants.</li>
             <li>Support farmers with sustainable, soil-friendly practices.</li>
             <li>Empower rural youth through environmental leadership.</li>
             <li>Create green corridors in and around villages and towns.</li>
           </ul>
+          <p>
+            Through consistent, on-the-ground efforts, we aim to create villages
+            that are greener, healthier, and more resilient for future
+            generations.
+          </p>
         </div>
       </div>
     </div>
