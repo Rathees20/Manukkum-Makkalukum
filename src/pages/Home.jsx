@@ -7,6 +7,13 @@ const Home = () => {
   return (
     <div className="page" id="home">
       <section className="hero">
+        <div className="hero-image-overlay">
+          <img 
+            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80" 
+            alt="Lush green reforestation" 
+            className="hero-bg-img"
+          />
+        </div>
         <div className="hero-content">
           <p className="hero-kicker">Actor Soundara Raja&apos;s Choice</p>
           <h1>
@@ -38,6 +45,11 @@ const Home = () => {
         </div>
 
         <div className="hero-card">
+          <img 
+            src="https://images.unsplash.com/photo-1599307337250-9884e6eeec01?auto=format&fit=crop&w=600&q=80" 
+            alt="Planting a sapling" 
+            className="card-img-top"
+          />
           <h3>Planting a Future</h3>
           <p>
             Every shoot we plant is a promise – to our farmers, to our
