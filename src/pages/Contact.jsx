@@ -1,4 +1,6 @@
 import React from "react";
+import "./SharedSections.css";
+import "./Contact.css";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -10,7 +12,7 @@ const Contact = () => {
     <div className="page section" id="contact">
       <div className="section-header">
         <h2>Contact &amp; Next Steps</h2>
-        <p>Let&apos;s plant the next sapling together.</p>
+        <p>Let&apos;s plant the next sapling together with Mannukkum Makkalukum.</p>
       </div>
 
       <div className="contact-layout">
@@ -23,13 +25,13 @@ const Contact = () => {
           </p>
           <div className="contact-details">
             <p>
-              <strong>Email</strong>: forthelandandpeople@example.org
+              <strong>Email</strong>: mannukkummakkalukum@example.org
             </p>
             <p>
               <strong>Phone / WhatsApp</strong>: +91-90000-00000
             </p>
             <p>
-              <strong>Instagram</strong>: @forthelandandthepeople
+              <strong>Instagram</strong>: @mannukkummakkalukum
             </p>
           </div>
         </div>

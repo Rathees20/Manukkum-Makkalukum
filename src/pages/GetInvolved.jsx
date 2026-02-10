@@ -1,4 +1,6 @@
 import React from "react";
+import "./SharedSections.css";
+import "./GetInvolved.css";
 
 const GetInvolved = () => {
   return (
@@ -8,7 +10,7 @@ const GetInvolved = () => {
         <p>Actor Soundara Raja&apos;s choice can be yours too.</p>
       </div>
 
-      <div className="two-column">
+      <div className="get-involved-columns">
         <div>
           <h3>Volunteer With Us</h3>
           <p>

@@ -1,0 +1,35 @@
+.get-involved-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 22px;
+}
+
+.get-involved-columns h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--brand-green-dark);
+}
+
+.get-involved-columns p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.get-involved-columns > div {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.get-involved-columns > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(10, 40, 21, 0.16);
+  background: #f7fbf8;
+}
+
+@media (max-width: 900px) {
+  .get-involved-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

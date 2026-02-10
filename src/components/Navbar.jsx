@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
@@ -7,10 +8,8 @@ const Navbar = () => {
       <div className="navbar-left">
         <span className="logo-mark">🌱</span>
         <div>
-          <div className="logo-title">For the Land and the People</div>
-          <div className="logo-subtitle">
-            M. Soundara Raja Social Welfare Foundation
-          </div>
+          <div className="logo-title">Mannukkum Makkalukum</div>
+          <div className="logo-subtitle">Environmental Trust</div>
         </div>
       </div>
       <nav className="navbar-links">

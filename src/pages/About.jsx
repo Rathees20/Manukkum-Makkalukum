@@ -1,11 +1,12 @@
 import React from "react";
+import "./SharedSections.css";
 
 const About = () => {
   return (
     <div className="page section" id="about">
       <div className="section-header">
-        <h2>About the Foundation</h2>
-        <p>Rooted in the soil, grounded in people.</p>
+        <h2>About Mannukkum Makkalukum</h2>
+        <p>Rooted in the soil, dedicated to people.</p>
       </div>
 
       <div className="two-column">
@@ -20,8 +21,8 @@ const About = () => {
             With the guiding vision of improving both{" "}
             <strong>the wealth of the soil</strong> and{" "}
             <strong>the welfare of the people</strong>, Actor M. Soundara Raja
-            started the social welfare foundation{" "}
-            <strong>“For the Land and the People”</strong>.
+            helped inspire the environmental trust{" "}
+            <strong>“Mannukkum Makkalukum”</strong>.
           </p>
           <p>
             From film sets to remote villages, he has made it a habit to{" "}

@@ -1,4 +1,6 @@
 import React from "react";
+import "./SharedSections.css";
+import "./Programs.css";
 
 const Programs = () => {
   return (

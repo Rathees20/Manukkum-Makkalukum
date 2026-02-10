@@ -1,4 +1,6 @@
 import React from "react";
+import "./SharedSections.css";
+import "./Impact.css";
 
 const Impact = () => {
   return (
