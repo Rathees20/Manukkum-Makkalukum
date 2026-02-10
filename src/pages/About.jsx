@@ -14,12 +14,16 @@ const SectionHeader = ({ darkText, greenText }) => (
 );
 
 const About = () => {
-  const awards = [
-    { title: "40 under 40 Awards", img: "https://images.unsplash.com/photo-1578574577315-3fbe0ee38c3a?auto=format&fit=crop&w=300&q=80" },
-    { title: "Eco-Hero Awards", img: "https://images.unsplash.com/photo-1589156206699-bc21e38c8a7d?auto=format&fit=crop&w=300&q=80" },
-    { title: "Rural Impact Awards", img: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=300&q=80" },
-    { title: "Nature Guard Appreciation", img: "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=300&q=80" },
-    { title: "Green Leadership Awards", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=300&q=80" },
+  const teamMembers = [
+    { name: "John Doe", role: "Founder & Chairman", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+    { name: "Jane Smith", role: "Managing Director", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" },
+    { name: "Robert Wilson", role: "Chief Coordinator", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+    { name: "Sarah Miller", role: "Project Lead", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" },
+    { name: "Michael Chen", role: "Environmental Specialist", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+    { name: "Emily Brown", role: "Community Outreach", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+    { name: "David Kumar", role: "Field Supervisor", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+    { name: "Lisa Anderson", role: "Communication Manager", img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=300&q=80" },
+    { name: "Kevin Paul", role: "Volunteer Coordinator", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
   ];
 
   return (
@@ -37,7 +41,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Existing Content Re-styled */}
+      {/* Existing Content */}
       <div className="section">
         <div className="section-header">
           <h2>About Mannukkum Makkalukum</h2>
@@ -77,16 +81,17 @@ const About = () => {
         </div>
       </div>
 
-      {/* Awards Section */}
+      {/* Our Team Section */}
       <section className="about-custom-section">
-        <SectionHeader darkText="" greenText="Awards" />
-        <div className="awards-grid">
-          {awards.map((award, index) => (
-            <div key={index} className="award-card">
-              <div className="award-img-container">
-                <img src={award.img} alt={award.title} />
+        <SectionHeader darkText="Our" greenText="Team" />
+        <div className="team-grid">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="team-card">
+              <div className="team-img-container">
+                <img src={member.img} alt={member.name} />
               </div>
-              <p>{award.title}</p>
+              <h4>{member.name}</h4>
+              <p>{member.role}</p>
             </div>
           ))}
         </div>

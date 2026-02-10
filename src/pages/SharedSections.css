@@ -1,5 +1,5 @@
 .section {
-  padding: 32px 26px;
+  padding: 24px 26px;
   border-radius: 24px;
   background: #ffffff;
   border: 1px solid var(--border-soft);
@@ -8,7 +8,6 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -50,7 +49,7 @@
   color: var(--text-muted);
 }
 
-.bullet-list li + li {
+.bullet-list li+li {
   margin-top: 6px;
 }
 
@@ -90,6 +89,7 @@
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
