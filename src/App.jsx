@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WelcomePopup from "./components/WelcomePopup";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
@@ -12,6 +13,7 @@ import Contact from "./pages/Contact";
 const App = () => {
   return (
     <div className="app">
+      <WelcomePopup />
       <Navbar />
       <main className="main-content">
         <Routes>
@@ -20,7 +22,6 @@ const App = () => {
             element={
               <>
                 <Home />
-                <About />
                 <Programs />
                 <Impact />
                 <GetInvolved />
@@ -28,6 +29,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
       <Footer />
