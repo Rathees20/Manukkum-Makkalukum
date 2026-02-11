@@ -5,13 +5,13 @@ import "./GetInvolved.css";
 const GetInvolved = () => {
   return (
     <div className="page section section-alt" id="get-involved">
-      <div className="section-header">
+      <div className="section-header" data-aos="fade-up">
         <h2>Get Involved</h2>
         <p>Actor Soundara Raja&apos;s choice can be yours too.</p>
       </div>
 
       <div className="get-involved-columns">
-        <div>
+        <div data-aos="fade-right">
           <h3>Volunteer With Us</h3>
           <p>
             Whether you are a student, a working professional, or a fan of
@@ -23,7 +23,7 @@ const GetInvolved = () => {
             <li>Help us document stories and spread the word online.</li>
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-left">
           <h3>Support the Mission</h3>
           <p>
             You can support the foundation through contributions in kind,

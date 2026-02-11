@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WelcomePopup from "./components/WelcomePopup";
@@ -11,6 +13,13 @@ import GetInvolved from "./pages/GetInvolved";
 import Contact from "./pages/Contact";
 
 const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out-quad",
+    });
+  }, []);
   return (
     <div className="app">
       <WelcomePopup />
@@ -25,11 +34,11 @@ const App = () => {
                 <Programs />
                 <Impact />
                 <GetInvolved />
-                <Contact />
               </>
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

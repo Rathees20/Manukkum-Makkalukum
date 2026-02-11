@@ -5,16 +5,16 @@ import "./Programs.css";
 const Programs = () => {
   return (
     <div className="page section section-alt" id="programs">
-      <div className="section-header">
+      <div className="section-header" data-aos="fade-up">
         <h2>Programs &amp; Initiatives</h2>
         <p>From saplings to sustainable communities.</p>
       </div>
 
       <div className="card-grid">
-        <div className="card">
-          <img 
-            src="/images/p4.jpeg" 
-            alt="Sapling Drive" 
+        <div className="card" data-aos="fade-up" data-aos-delay="100">
+          <img
+            src="/images/p4.jpeg"
+            alt="Sapling Drive"
             className="card-img-top"
             style={{ objectPosition: "top" }}
           />
@@ -31,12 +31,12 @@ const Programs = () => {
           </ul>
         </div>
 
-        <div className="card">
-          <img 
-            src="/images/p3.jpeg" 
-            alt="Soil and Water" 
+        <div className="card" data-aos="fade-up" data-aos-delay="200">
+          <img
+            src="/images/p3.jpeg"
+            alt="Soil and Water"
             className="card-img-top"
-             style={{ objectPosition: "top" }}
+            style={{ objectPosition: "top" }}
           />
           <h3>2. Soil &amp; Water Stewardship</h3>
           <p>
@@ -50,12 +50,12 @@ const Programs = () => {
           </ul>
         </div>
 
-        <div className="card">
-          <img 
-            src="/images/p2.jpeg" 
-            alt="Community Outreach" 
+        <div className="card" data-aos="fade-up" data-aos-delay="300">
+          <img
+            src="/images/p2.jpeg"
+            alt="Community Outreach"
             className="card-img-top"
-             style={{ objectPosition: "top" }}
+            style={{ objectPosition: "top" }}
           />
           <h3>3. People &amp; Welfare Outreach</h3>
           <p>

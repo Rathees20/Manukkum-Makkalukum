@@ -29,7 +29,7 @@ const About = () => {
   return (
     <div className="page about-page" id="about">
       {/* Our Journey Section */}
-      <section className="about-custom-section">
+      <section className="about-custom-section" data-aos="fade-up">
         <SectionHeader darkText="Our" greenText="Journey" />
         <div className="journey-content">
           <p>
@@ -43,13 +43,13 @@ const About = () => {
 
       {/* Existing Content */}
       <div className="section">
-        <div className="section-header">
+        <div className="section-header" data-aos="fade-up">
           <h2>About Mannukkum Makkalukum</h2>
           <p>Rooted in the soil, dedicated to people.</p>
         </div>
 
         <div className="two-column">
-          <div>
+          <div data-aos="fade-right">
             <h3>Our Story</h3>
             <img
               src="/images/p5.jpeg"
@@ -64,7 +64,7 @@ const About = () => {
               <strong>“Mannukkum Makkalukum”</strong>.
             </p>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <h3>Our Vision</h3>
             <img
               src="/images/p1.jpeg"
@@ -86,7 +86,12 @@ const About = () => {
         <SectionHeader darkText="Our" greenText="Team" />
         <div className="team-grid">
           {teamMembers.map((member, index) => (
-            <div key={index} className="team-card">
+            <div
+              key={index}
+              className="team-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <div className="team-img-container">
                 <img src={member.img} alt={member.name} />
               </div>
