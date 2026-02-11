@@ -16,17 +16,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [dropdowns, setDropdowns] = useState({ about: false, themes: false });
-
   const handleNavClick = (hash) => {
     if (hash === "/about" || hash === "/contact") {
       navigate(hash);
       window.scrollTo(0, 0);
-    } else if (hash.startsWith("/themes")) {
-      navigate("/");
-      setTimeout(() => {
-        window.location.hash = "#focus-themes";
-      }, 100);
     } else {
       if (location.pathname !== "/") {
         navigate("/");
@@ -38,12 +31,6 @@ const Navbar = () => {
       }
     }
     setIsOpen(false);
-    setDropdowns({ about: false, themes: false });
-  };
-
-  const toggleDropdown = (e, name) => {
-    e.stopPropagation();
-    setDropdowns(prev => ({ ...prev, [name]: !prev[name] }));
   };
 
   return (
@@ -71,24 +58,8 @@ const Navbar = () => {
 
       <nav id="mobile-nav" className={`navbar-links ${isOpen ? "open" : ""}`}>
         <a onClick={() => handleNavClick("#home")}>Home</a>
-
-        <div className={`nav-dropdown ${dropdowns.about ? "active" : ""}`}>
-          <a onClick={(e) => toggleDropdown(e, "about")}>About ▾</a>
-          <div className="dropdown-content">
-            <a onClick={() => handleNavClick("/about")}>Our Journey</a>
-            <a onClick={() => handleNavClick("/about")}>Our Team</a>
-          </div>
-        </div>
-
-        <div className={`nav-dropdown ${dropdowns.themes ? "active" : ""}`}>
-          <a onClick={(e) => toggleDropdown(e, "themes")}>Focus Areas ▾</a>
-          <div className="dropdown-content">
-            <a onClick={() => handleNavClick("/themes/ecology")}>Ecology</a>
-            <a onClick={() => handleNavClick("/themes/wildlife")}>Wildlife</a>
-            <a onClick={() => handleNavClick("/themes/resources")}>Resources</a>
-          </div>
-        </div>
-
+        <a onClick={() => handleNavClick("/about")}>About</a>
+        <a onClick={() => handleNavClick("#focus-themes")}>Focus Areas</a>
         <a onClick={() => handleNavClick("#programs")}>Programs</a>
         <a onClick={() => handleNavClick("#impact")}>Impact</a>
         <a onClick={() => handleNavClick("#get-involved")}>Get Involved</a>
@@ -99,4 +70,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
