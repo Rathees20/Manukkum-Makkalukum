@@ -138,7 +138,7 @@ const Home = () => {
           <div className="gallery-item" data-aos="zoom-in" data-aos-delay="200">
             <img src="/images/p3.jpeg" alt="Nature 3" />
           </div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <div className="gallery-item special-focus" data-aos="zoom-in" data-aos-delay="300">
             <img src="/images/p4.jpeg" alt="Nature 4" />
           </div>
           <div className="gallery-item" data-aos="zoom-in" data-aos-delay="400">
