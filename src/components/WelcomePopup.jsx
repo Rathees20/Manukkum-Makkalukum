@@ -7,16 +7,7 @@ export default function WelcomePopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    try {
-      const seen = sessionStorage.getItem(SESSION_KEY);
-      if (!seen) {
-        setOpen(true);
-        sessionStorage.setItem(SESSION_KEY, "1");
-      }
-    } catch {
-      // If storage is blocked, still show once per load.
-      setOpen(true);
-    }
+    setOpen(true);
   }, []);
 
   useEffect(() => {
@@ -46,12 +37,9 @@ export default function WelcomePopup() {
             alt="Native Tree Sapling"
             className="welcomePopup-image"
           />
-          <div className="welcomePopup-badge">Tree Type</div>
-        </div>
-
-        <div className="welcomePopup-content">
-          <h3 className="welcomePopup-title">One person per household should protect the environment.</h3>
-
+          <div className="welcomePopup-overlay-content">
+            <h3 className="welcomePopup-title">வீட்டுக்கு ஒருவர் சுற்றுச்சூழலை காக்க வேண்டும்.</h3>
+          </div>
         </div>
       </div>
       <button
