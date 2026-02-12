@@ -1,40 +1,37 @@
 import React from "react";
-import "./SharedSections.css";
 import "./GetInvolved.css";
 
 const GetInvolved = () => {
   return (
-    <div className="page section section-alt" id="get-involved">
-      <div className="section-header" data-aos="fade-up">
-        <h2>Get Involved</h2>
-        <p>Actor Soundara Raja&apos;s choice can be yours too.</p>
+    <div className="volunteer-section" id="get-involved">
+      <div className="volunteer-header" data-aos="fade-up">
+        <h2>VOLUNTEER <span className="highlight-green">WITH US</span></h2>
+        <div className="title-underline"></div>
       </div>
 
-      <div className="get-involved-columns">
-        <div data-aos="fade-right">
-          <h3>Volunteer With Us</h3>
-          <p>
-            Whether you are a student, a working professional, or a fan of
-            Soundara Raja sir, there is a place for you in this movement.
-          </p>
-          <ul className="bullet-list">
-            <li>Join local sapling drives and awareness events.</li>
-            <li>Adopt a tree and care for it in your area.</li>
-            <li>Help us document stories and spread the word online.</li>
-          </ul>
-        </div>
-        <div data-aos="fade-left">
-          <h3>Support the Mission</h3>
-          <p>
-            You can support the foundation through contributions in kind,
-            partnerships, or by hosting drives in your institution or
-            community.
-          </p>
-          <ul className="bullet-list">
-            <li>Partner with us for CSR or institutional programs.</li>
-            <li>Donate saplings, tools, or educational materials.</li>
-            <li>Invite the team to your village, school, or event.</li>
-          </ul>
+      <div className="volunteer-content-wrapper" data-aos="fade-up">
+        <h3 className="volunteer-sub-title">JOIN OUR MOVEMENT, VOLUNTEER</h3>
+        
+        <div className="volunteer-flex-container">
+          <div className="volunteer-image-container">
+            <img 
+              src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg" 
+              alt="Hands joined in circle" 
+              className="volunteer-round-img"
+            />
+          </div>
+          
+          <div className="volunteer-text-content">
+            <p>
+              We believe bringing positive change in large scale is not a single handed process. Bringing constructive change in society must be supported by the <strong>'Power of People'</strong>.
+            </p>
+            <p>
+              Thank you for expressing your interest with us for a greener future. We will respond to you as per the requirements and availability of volunteering opportunities.
+            </p>
+            <p>
+              Working professionals and homemakers who have needed skills can also help us through online communication and support.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -42,4 +39,3 @@ const GetInvolved = () => {
 };
 
 export default GetInvolved;
-

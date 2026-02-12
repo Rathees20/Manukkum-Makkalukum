@@ -1,20 +1,24 @@
 .footer-container {
   background: #072212;
   color: #ffffff;
-  padding: 80px 20px 0;
+  padding: 40px 20px 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 50px;
   padding-bottom: 60px;
+}
+
+.about-col {
+  margin-top: 25px;
 }
 
 .footer-column h4 {
@@ -32,7 +36,7 @@
   bottom: 0;
   width: 40px;
   height: 2px;
-  background: var(--brand-accent, #ffb703);
+  background: #ffffff;
 }
 
 .footer-logo {
@@ -75,22 +79,49 @@
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-links a:hover {
   color: #ffffff;
-  padding-left: 5px;
+  transform: translateX(5px);
 }
 
-.footer-contact p {
+.footer-links a svg {
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact-icon {
+  color: #ffffff;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-item p {
   font-size: 14px;
   color: #a0bca8;
-  margin-bottom: 12px;
+  margin: 0;
   line-height: 1.5;
 }
 
-.footer-contact strong {
+.contact-item strong {
   color: #ffffff;
+  margin-right: 5px;
 }
 
 .footer-social {
@@ -100,18 +131,25 @@
 }
 
 .social-icon {
-  font-size: 13px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 12px;
-  border-radius: 4px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
   color: #cde9d7;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-icon:hover {
-  background: var(--brand-accent, #ffb703);
+  background: #ffffff;
   color: #072212;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  border-color: transparent;
 }
 
 .footer-bottom {

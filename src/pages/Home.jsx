@@ -98,30 +98,74 @@ const Home = () => {
         </div>
       </section>
       {/* Focus Themes Section */}
-      <section className="focus-themes" data-aos="fade-up">
-        <div className="section-header">
-          <h2>Our Focus Themes</h2>
-          <p>The core pillars of our environmental movement.</p>
-        </div>
-        <div className="themes-grid">
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
-            <div className="theme-icon">🌿</div>
-            <h3>Ecology & Environment</h3>
-            <p>Working towards a greener planet by restoring biodiversity and creating sustainable green corridors in rural and urban areas.</p>
-          </div>
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
-            <div className="theme-icon">🐾</div>
-            <h3>Wildlife Conservation</h3>
-            <p>Dedicated to protecting natural habitats and ensuring a safe future for our precious wildlife through community-led efforts.</p>
-          </div>
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
-            <div className="theme-icon">💧</div>
-            <h3>Natural Resource Management</h3>
-            <p>Promoting sustainable soil and water conservation practices to build climate-resilient communities for future generations.</p>
-          </div>
-        </div>
-      </section>
+<section className="focus-themes" data-aos="fade-up">
+  <div className="section-header">
+    <h2>
+      Our Mission & Themes <span className="leaf-icon-small">🍃</span>
+    </h2>
+    <p className="section-subtitle">
+      "Every household should become an environmental activist!"
+    </p>
+  </div>
 
+  <div className="themes-grid">
+    
+    {/* Theme 1 */}
+    <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
+      <div className="theme-img-container">
+        <img
+          src="https://images.unsplash.com/photo-1596796472099-2a91217e997f?auto=format&fit=crop&w=300&q=80"
+          alt="Soil and Agriculture"
+        />
+      </div>
+      <h3>Wealth of the Soil</h3>
+      <p>
+        We believe that protecting our soil is the foundation of a prosperous society.
+        By promoting tree plantation, sustainable farming, and ecological restoration,
+        we work to revive the natural strength of the land and ensure food and water
+        security for future generations.
+      </p>
+      <button className="btn-read-more">Read More</button>
+    </div>
+
+    {/* Theme 2 */}
+    <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
+      <div className="theme-img-container">
+        <img
+          src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=300&q=80"
+          alt="Tree Plantation"
+        />
+      </div>
+      <h3>Tree Plantation Movement</h3>
+      <p>
+        Inspired by the vision that nature must be protected at the right time,
+        we encourage every household to plant and nurture trees. Protecting existing
+        trees and increasing green cover ensures balanced rainfall, cleaner air,
+        and a healthier ecosystem.
+      </p>
+      <button className="btn-read-more">Read More</button>
+    </div>
+
+    {/* Theme 3 */}
+    <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
+      <div className="theme-img-container">
+        <img
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
+          alt="Community Welfare"
+        />
+      </div>
+      <h3>Welfare of the People</h3>
+      <p>
+        Our mission connects environmental protection with social upliftment.
+        By restoring water bodies, conserving biodiversity, and empowering rural
+        communities, we aim to reduce poverty and create a sustainable future
+        where both land and people thrive together.
+      </p>
+      <button className="btn-read-more">Read More</button>
+    </div>
+
+  </div>
+</section>
       {/* Photo Gallery Section */}
       <section className="photo-gallery" data-aos="fade-up">
         <div className="section-header">
@@ -150,30 +194,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Publications Section */}
-      <section className="publications" data-aos="fade-up">
-        <div className="section-header">
-          <h2>Publications &amp; Reports</h2>
-          <p>Transparency in our action. Download our latest reports.</p>
-        </div>
-        <div className="pub-grid">
-          <div className="pub-card" data-aos="fade-up">
-            <span className="pub-icon">📄</span>
-            <h3>Annual Report 2024</h3>
-            <button className="btn btn-outline btn-small">Download PDF</button>
-          </div>
-          <div className="pub-card" data-aos="fade-up" data-aos-delay="100">
-            <span className="pub-icon">📄</span>
-            <h3>FCRA Compliances</h3>
-            <button className="btn btn-outline btn-small">View Details</button>
-          </div>
-          <div className="pub-card" data-aos="fade-up" data-aos-delay="200">
-            <span className="pub-icon">📄</span>
-            <h3>Environment Audit</h3>
-            <button className="btn btn-outline btn-small">Download PDF</button>
-          </div>
-        </div>
-      </section>
+
+     {/* Primary Work Areas Section */}
+<section className="primary-work-areas" data-aos="fade-up">
+  <div className="work-areas-content">
+    <div className="work-areas-header">
+      <span className="leaf-icon">🍃</span>
+      <h2>Primary Work Areas</h2>
+    </div>
+
+    <p>
+      Our primary mission is to improve both the wealth of the soil and the
+      welfare of the people. We focus on large-scale tree plantation,
+      protection of existing trees, restoration of water bodies, and
+      conservation of biodiversity to rebuild a balanced ecosystem.
+    </p>
+
+    <p>
+      Through community participation, environmental awareness, and
+      sustainable rural development initiatives, we encourage every
+      household to become an environmental activist. By combining
+      traditional wisdom with scientific approaches, we strive to
+      create a greener, self-sustaining future for generations to come.
+    </p>
+  </div>
+
+  <div className="work-areas-image">
+    <img
+      src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+      alt="Tree plantation and sustainable agriculture"
+    />
+  </div>
+</section>
+
 
     </div>
   );

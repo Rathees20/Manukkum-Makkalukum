@@ -59,7 +59,7 @@ const Navbar = () => {
       <nav id="mobile-nav" className={`navbar-links ${isOpen ? "open" : ""}`}>
         <a onClick={() => handleNavClick("#home")}>Home</a>
         <a onClick={() => handleNavClick("/about")}>About</a>
-        <a onClick={() => handleNavClick("#focus-themes")}>Focus Areas</a>
+        {/* <a onClick={() => handleNavClick("#focus-themes")}>Focus Areas</a> */}
         <a onClick={() => handleNavClick("#programs")}>Programs</a>
         <a onClick={() => handleNavClick("#impact")}>Impact</a>
         <a onClick={() => handleNavClick("#get-involved")}>Get Involved</a>

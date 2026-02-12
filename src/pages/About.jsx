@@ -28,6 +28,18 @@ const About = () => {
 
   return (
     <div className="page about-page" id="about">
+      {/* Banner Section */}
+      <div className="about-banner" data-aos="fade-down">
+        <img
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80"
+          alt="Environmental banner"
+          className="banner-image"
+        />
+        <div className="banner-overlay">
+          <h1 data-aos="zoom-in" data-aos-delay="200">About Us</h1>
+        </div>
+      </div>
+
       {/* Our Journey Section */}
       <section className="about-custom-section" data-aos="fade-up">
         <SectionHeader darkText="Our" greenText="Journey" />
@@ -41,45 +53,58 @@ const About = () => {
         </div>
       </section>
 
-      {/* Existing Content */}
-      <div className="section">
-        <div className="section-header" data-aos="fade-up">
-          <h2>About Mannukkum Makkalukum</h2>
-          <p>Rooted in the soil, dedicated to people.</p>
+      {/* Mission & Vision Section - Redesigned */}
+      <section className="mission-section" data-aos="fade-up">
+        <div className="mission-intro">
+          <span className="subtitle">Our Identity</span>
+          <h2>Mannukkum Makkalukum</h2>
+          <p className="tagline">Rooted in the soil, dedicated to people.</p>
         </div>
 
-        <div className="two-column">
-          <div data-aos="fade-right">
-            <h3>Our Story</h3>
-            <img
-              src="/images/p5.jpeg"
-              alt="Inspired leadership"
-              className="about-img"
-            />
-            <p>
-              With the guiding vision of improving both{" "}
-              <strong>the wealth of the soil</strong> and{" "}
-              <strong>the welfare of the people</strong>, Actor M. Soundara Raja
-              helped inspire the environmental trust{" "}
-              <strong>“Mannukkum Makkalukum”</strong>.
-            </p>
+        <div className="mission-grid">
+          <div className="mission-card story-card" data-aos="fade-right">
+            <div className="mission-image-wrapper">
+              <img src="/images/p5.jpeg" alt="Our Story" />
+            </div>
+            <div className="mission-content">
+              <h3>Our Story</h3>
+              <p>
+                Inspired by the vision of improving both <strong>the wealth of the soil</strong> and
+                <strong> the welfare of the people</strong>, Actor M. Soundara Raja helped
+                pioneer this movement. We are more than an organization; we are a growing
+                collective of nature lovers.
+              </p>
+            </div>
           </div>
-          <div data-aos="fade-left">
-            <h3>Our Vision</h3>
-            <img
-              src="/images/p1.jpeg"
-              alt="Fertile soil and growth"
-              className="about-img"
-            />
-            <ul className="bullet-list">
-              <li>Regenerate degraded lands with native trees and plants.</li>
-              <li>Support farmers with sustainable, soil-friendly practices.</li>
-              <li>Empower rural youth through environmental leadership.</li>
-              <li>Create green corridors in and around villages and towns.</li>
-            </ul>
+
+          <div className="mission-card vision-card" data-aos="fade-left">
+            <div className="mission-image-wrapper">
+              <img src="/images/p1.jpeg" alt="Our Vision" />
+            </div>
+            <div className="mission-content">
+              <h3>Our Vision</h3>
+              <ul className="vision-list">
+                <li>
+                  <span className="icon">🌱</span>
+                  <span>Regenerate degraded lands with native species</span>
+                </li>
+                <li>
+                  <span className="icon">👨‍🌾</span>
+                  <span>Support sustainable, soil-friendly farming</span>
+                </li>
+                <li>
+                  <span className="icon">🤝</span>
+                  <span>Empower rural youth through leadership</span>
+                </li>
+                <li>
+                  <span className="icon">🌳</span>
+                  <span>Create green corridors in every village</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Our Team Section */}
       <section className="about-custom-section">

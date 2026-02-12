@@ -61,7 +61,7 @@ body {
 .app {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 16px 16px 48px;
+  padding: 16px 16px 0;
 }
 
 .main-content {

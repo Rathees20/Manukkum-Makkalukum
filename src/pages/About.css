@@ -1,5 +1,66 @@
 .about-page {
-    padding-top: 20px;
+    padding-top: 0;
+}
+
+.about-banner {
+    position: relative;
+    width: 100vw;
+    height: 350px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-overlay h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+    .about-banner {
+        height: 250px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .banner-overlay h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-banner {
+        height: 200px;
+    }
+
+    .banner-overlay h1 {
+        font-size: 28px;
+    }
 }
 
 .about-custom-section {
@@ -47,6 +108,170 @@
 .brand-text {
     color: #4caf50;
     font-weight: 600;
+}
+
+.mission-section {
+    padding: 60px 20px;
+    background-color: #fdfdfd;
+    overflow: hidden;
+}
+
+.mission-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.mission-intro .subtitle {
+    display: block;
+    color: var(--brand-green-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.mission-intro h2 {
+    font-size: 36px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.mission-intro .tagline {
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Elevated Green Outlayer Card Design */
+.mission-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Stroneger Green Outlayer */
+    border: 4px solid #43a047;
+    /* Thicker and slightly darker green */
+    box-shadow:
+        0 6px 10px rgba(76, 175, 80, 0.2),
+        /* Distinct green ambient */
+        0 15px 30px rgba(76, 175, 80, 0.25);
+    /* Stronger green lift */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 100%;
+    /* Force equal height for grid items */
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 20px rgba(76, 175, 80, 0.3),
+        0 25px 50px rgba(76, 175, 80, 0.35);
+    border-color: #2e7d32;
+    /* Deep green on hover */
+}
+
+.mission-image-wrapper {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mission-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.mission-card:hover .mission-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.mission-content {
+    padding: 25px;
+}
+
+.mission-content h3 {
+    font-size: 24px;
+    color: var(--brand-green-dark);
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.mission-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--brand-green-soft);
+}
+
+.mission-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.vision-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vision-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #555;
+}
+
+.vision-list .icon {
+    font-size: 20px;
+    background: #f0f9f1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-intro h2 {
+        font-size: 32px;
+    }
+
+    .mission-intro .tagline {
+        font-size: 18px;
+    }
+
+    .mission-section {
+        padding: 60px 20px;
+    }
 }
 
 .team-grid {
