@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
 
+  const heroImages = [
+    "/images/img01 (13).jpeg",
+    "/images/img01 (7).jpeg"
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
   return (
     <div className="page" id="home">
       <section className="hero">
         <div className="hero-image-overlay">
-          <img
-            src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=80"
-            alt="Nature Landscape"
-            className="hero-bg-img"
-          />
+          <AnimatePresence>
+            <motion.img
+              key={heroImages[currentImageIndex]}
+              src={heroImages[currentImageIndex]}
+              alt="Nature Landscape"
+              className="hero-bg-img pos-top"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1.05 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
         </div>
         <div className="hero-container">
           <motion.div
@@ -98,74 +120,74 @@ const Home = () => {
         </div>
       </section>
       {/* Focus Themes Section */}
-<section className="focus-themes" data-aos="fade-up">
-  <div className="section-header">
-    <h2>
-      Our Mission & Themes <span className="leaf-icon-small">🍃</span>
-    </h2>
-    <p className="section-subtitle">
-      "Every household should become an environmental activist!"
-    </p>
-  </div>
+      <section className="focus-themes" data-aos="fade-up">
+        <div className="section-header">
+          <h2>
+            Our Mission & Themes <span className="leaf-icon-small">🍃</span>
+          </h2>
+          <p className="section-subtitle">
+            "Every household should become an environmental activist!"
+          </p>
+        </div>
 
-  <div className="themes-grid">
-    
-    {/* Theme 1 */}
-    <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
-      <div className="theme-img-container">
-        <img
-          src="https://images.unsplash.com/photo-1596796472099-2a91217e997f?auto=format&fit=crop&w=300&q=80"
-          alt="Soil and Agriculture"
-        />
-      </div>
-      <h3>Wealth of the Soil</h3>
-      <p>
-        We believe that protecting our soil is the foundation of a prosperous society.
-        By promoting tree plantation, sustainable farming, and ecological restoration,
-        we work to revive the natural strength of the land and ensure food and water
-        security for future generations.
-      </p>
-      <button className="btn-read-more">Read More</button>
-    </div>
+        <div className="themes-grid">
 
-    {/* Theme 2 */}
-    <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
-      <div className="theme-img-container">
-        <img
-          src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=300&q=80"
-          alt="Tree Plantation"
-        />
-      </div>
-      <h3>Tree Plantation Movement</h3>
-      <p>
-        Inspired by the vision that nature must be protected at the right time,
-        we encourage every household to plant and nurture trees. Protecting existing
-        trees and increasing green cover ensures balanced rainfall, cleaner air,
-        and a healthier ecosystem.
-      </p>
-      <button className="btn-read-more">Read More</button>
-    </div>
+          {/* Theme 1 */}
+          <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
+            <div className="theme-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
+                alt="Soil and Agriculture"
+              />
+            </div>
+            <h3>Wealth of the Soil</h3>
+            <p>
+              We believe that protecting our soil is the foundation of a prosperous society.
+              By promoting tree plantation, sustainable farming, and ecological restoration,
+              we work to revive the natural strength of the land and ensure food and water
+              security for future generations.
+            </p>
+            <button className="btn-read-more">Read More</button>
+          </div>
 
-    {/* Theme 3 */}
-    <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
-      <div className="theme-img-container">
-        <img
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
-          alt="Community Welfare"
-        />
-      </div>
-      <h3>Welfare of the People</h3>
-      <p>
-        Our mission connects environmental protection with social upliftment.
-        By restoring water bodies, conserving biodiversity, and empowering rural
-        communities, we aim to reduce poverty and create a sustainable future
-        where both land and people thrive together.
-      </p>
-      <button className="btn-read-more">Read More</button>
-    </div>
+          {/* Theme 2 */}
+          <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
+            <div className="theme-img-container">
+              <img
+                src="https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.jpg?s=1024x1024&w=is&k=20&c=DQmak_9J4DwI1y9SVeG14sZK0oYethaBQwPTEbhGUDQ="
+                alt="Tree Plantation"
+              />
+            </div>
+            <h3>Tree Plantation Movement</h3>
+            <p>
+              Inspired by the vision that nature must be protected at the right time,
+              we encourage every household to plant and nurture trees. Protecting existing
+              trees and increasing green cover ensures balanced rainfall, cleaner air,
+              and a healthier ecosystem.
+            </p>
+            <button className="btn-read-more">Read More</button>
+          </div>
 
-  </div>
-</section>
+          {/* Theme 3 */}
+          <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
+            <div className="theme-img-container">
+              <img
+                src="https://media.istockphoto.com/id/1549592912/photo/a-group-of-volunteers-holds-a-small-tree-in-their-hands-for-plant-concept-of-world.jpg?s=1024x1024&w=is&k=20&c=-J0G4JpiMODq_dl0dkvHCyMO6bIv0_zDOlGHM--ah1Y="
+                alt="Community Welfare"
+              />
+            </div>
+            <h3>Welfare of the People</h3>
+            <p>
+              Our mission connects environmental protection with social upliftment.
+              By restoring water bodies, conserving biodiversity, and empowering rural
+              communities, we aim to reduce poverty and create a sustainable future
+              where both land and people thrive together.
+            </p>
+            <button className="btn-read-more">Read More</button>
+          </div>
+
+        </div>
+      </section>
       {/* Photo Gallery Section */}
       <section className="photo-gallery" data-aos="fade-up">
         <div className="section-header">
@@ -195,37 +217,37 @@ const Home = () => {
       </section>
 
 
-     {/* Primary Work Areas Section */}
-<section className="primary-work-areas" data-aos="fade-up">
-  <div className="work-areas-content">
-    <div className="work-areas-header">
-      <span className="leaf-icon">🍃</span>
-      <h2>Primary Work Areas</h2>
-    </div>
+      {/* Primary Work Areas Section */}
+      <section className="primary-work-areas" data-aos="fade-up">
+        <div className="work-areas-content">
+          <div className="work-areas-header">
+            <span className="leaf-icon">🍃</span>
+            <h2>Primary Work Areas</h2>
+          </div>
 
-    <p>
-      Our primary mission is to improve both the wealth of the soil and the
-      welfare of the people. We focus on large-scale tree plantation,
-      protection of existing trees, restoration of water bodies, and
-      conservation of biodiversity to rebuild a balanced ecosystem.
-    </p>
+          <p>
+            Our primary mission is to improve both the wealth of the soil and the
+            welfare of the people. We focus on large-scale tree plantation,
+            protection of existing trees, restoration of water bodies, and
+            conservation of biodiversity to rebuild a balanced ecosystem.
+          </p>
 
-    <p>
-      Through community participation, environmental awareness, and
-      sustainable rural development initiatives, we encourage every
-      household to become an environmental activist. By combining
-      traditional wisdom with scientific approaches, we strive to
-      create a greener, self-sustaining future for generations to come.
-    </p>
-  </div>
+          <p>
+            Through community participation, environmental awareness, and
+            sustainable rural development initiatives, we encourage every
+            household to become an environmental activist. By combining
+            traditional wisdom with scientific approaches, we strive to
+            create a greener, self-sustaining future for generations to come.
+          </p>
+        </div>
 
-  <div className="work-areas-image">
-    <img
-      src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
-      alt="Tree plantation and sustainable agriculture"
-    />
-  </div>
-</section>
+        <div className="work-areas-image">
+          <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+            alt="Tree plantation and sustainable agriculture"
+          />
+        </div>
+      </section>
 
 
     </div>

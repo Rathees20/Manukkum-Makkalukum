@@ -1,6 +1,7 @@
 import React from "react";
 import "./SharedSections.css";
 import "./About.css";
+import { GiPlantRoots, GiWheat, GiLightBulb, GiPineTree } from "react-icons/gi";
 
 const SectionHeader = ({ darkText, greenText }) => (
   <div className="custom-section-header">
@@ -85,19 +86,19 @@ const About = () => {
               <h3>Our Vision</h3>
               <ul className="vision-list">
                 <li>
-                  <span className="icon">🌱</span>
+                  <span className="icon"><GiPlantRoots /></span>
                   <span>Regenerate degraded lands with native species</span>
                 </li>
                 <li>
-                  <span className="icon">👨‍🌾</span>
+                  <span className="icon"><GiWheat /></span>
                   <span>Support sustainable, soil-friendly farming</span>
                 </li>
                 <li>
-                  <span className="icon">🤝</span>
+                  <span className="icon"><GiLightBulb /></span>
                   <span>Empower rural youth through leadership</span>
                 </li>
                 <li>
-                  <span className="icon">🌳</span>
+                  <span className="icon"><GiPineTree /></span>
                   <span>Create green corridors in every village</span>
                 </li>
               </ul>

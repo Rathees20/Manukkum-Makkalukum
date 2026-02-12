@@ -154,13 +154,13 @@
     margin: 0 auto;
 }
 
-/* Elevated Green Outlayer Card Design */
+/* Elevated Green Outlayer Card Design - Horizontal Layout */
 .mission-card {
     background: white;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    /* Stroneger Green Outlayer */
+    /* Stronger Green Outlayer */
     border: 4px solid #43a047;
     /* Thicker and slightly darker green */
     box-shadow:
@@ -169,7 +169,8 @@
         0 15px 30px rgba(76, 175, 80, 0.25);
     /* Stronger green lift */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* Changed to row for horizontal layout */
     transition: all 0.3s ease;
     height: 100%;
     /* Force equal height for grid items */
@@ -185,9 +186,12 @@
 }
 
 .mission-image-wrapper {
-    height: 180px;
-    width: 100%;
+    width: 50%;
+    /* Half width for image */
+    height: 100%;
+    /* Full height */
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .mission-image-wrapper img {
@@ -202,7 +206,12 @@
 }
 
 .mission-content {
-    padding: 25px;
+    width: 50%;
+    /* Half width for content */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .mission-content h3 {
@@ -271,6 +280,21 @@
 
     .mission-section {
         padding: 60px 20px;
+    }
+
+    /* Stack vertically on mobile */
+    .mission-card {
+        flex-direction: column;
+    }
+
+    .mission-image-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .mission-content {
+        width: 100%;
+        padding: 25px;
     }
 }
 

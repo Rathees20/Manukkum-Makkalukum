@@ -87,6 +87,14 @@
   transition: transform 0.5s ease;
 }
 
+.program-image img.pos-top {
+  object-position: top;
+}
+
+.program-image img.pos-center-top {
+  object-position: center 20%;
+}
+
 .program-card:hover .program-image img {
   transform: scale(1.05);
 }

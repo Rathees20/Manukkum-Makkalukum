@@ -11,7 +11,7 @@ const Programs = () => {
           <div className="programs-grid">
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80" alt="Blog 1" />
+                <img src="/images/img01 (1).jpeg" alt="Blog 1" className="pos-top" />
               </div>
               <div className="program-info">
                 <span className="card-tag">Blog</span>
@@ -22,7 +22,7 @@ const Programs = () => {
             </div>
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Blog 2" />
+                <img src="/images/img01 (2).jpeg" alt="Blog 2" className="pos-top" />
               </div>
               <div className="program-info">
                 <span className="card-tag">Blog</span>
@@ -33,7 +33,7 @@ const Programs = () => {
             </div>
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Blog 3" />
+                <img src="/images/img01 (3).jpeg" alt="Blog 3" className="pos-top" />
               </div>
               <div className="program-info">
                 <span className="card-tag">Blog</span>
@@ -44,15 +44,15 @@ const Programs = () => {
             </div>
           </div>
         );
-      case "upcoming":
+      case "events":
         return (
           <div className="programs-grid">
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1523301386674-3130094dc85b?auto=format&fit=crop&w=800&q=80" alt="Event 1" />
+                <img src="/images/img01 (14).jpeg" alt="Event 1" className="pos-top" />
               </div>
               <div className="program-info">
-                <span className="card-tag">Upcoming</span>
+                <span className="card-tag">Our Events</span>
                 <h3>Annual Tree Planting Drive</h3>
                 <p>Join us this weekend for our biggest plantation drive of the year...</p>
                 <button className="btn-card">Register</button>
@@ -60,50 +60,35 @@ const Programs = () => {
             </div>
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=800&q=80" alt="Event 2" />
+                <img src="/images/p1.jpeg" alt="Event 2" className="pos-top" />
               </div>
               <div className="program-info">
-                <span className="card-tag">Upcoming</span>
+                <span className="card-tag">Our Events</span>
                 <h3>Wildlife Awareness Workshop</h3>
                 <p>An educational session on co-existing with local wildlife...</p>
                 <button className="btn-card">Register</button>
               </div>
             </div>
-          </div>
-        );
-      case "ongoing":
-        return (
-          <div className="programs-grid">
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1596796472099-2a91217e997f?auto=format&fit=crop&w=800&q=80" alt="Ongoing 1" />
+                <img src="/images/p2.jpeg" alt="Event 3" className="pos-top" />
               </div>
               <div className="program-info">
-                <span className="card-tag">Ongoing</span>
-                <h3>Village Green Corridors</h3>
-                <p>Developing sustainable green zones in 50 villages...</p>
-                <button className="btn-card">Learn More</button>
-              </div>
-            </div>
-            <div className="program-card">
-              <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" alt="Ongoing 2" />
-              </div>
-              <div className="program-info">
-                <span className="card-tag">Ongoing</span>
-                <h3>Water Body Restoration</h3>
-                <p>Reviving ancient ponds and lakes for water security...</p>
-                <button className="btn-card">Learn More</button>
+                <span className="card-tag">Our Events</span>
+                <h3>Community Clean-up Initiative</h3>
+                <p>Join hands with us to create cleaner, greener communities...</p>
+                <button className="btn-card">Register</button>
               </div>
             </div>
           </div>
         );
+
       case "updates":
         return (
           <div className="programs-grid">
             <div className="program-card">
               <div className="program-image">
-                <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=800&q=80" alt="Update 1" />
+                <img src="/images/img01 (6).jpeg" alt="Update 1" className="pos-top" />
               </div>
               <div className="program-info">
                 <span className="card-tag">Update</span>
@@ -114,13 +99,24 @@ const Programs = () => {
             </div>
             <div className="program-card">
               <div className="program-image">
-                <img src="https://plus.unsplash.com/premium_photo-1661963874418-d111a1e124a5?auto=format&fit=crop&w=800&q=80" alt="Update 2" />
+                <img src="/images/img01 (11).jpeg" alt="Update 2" className="pos-center-top" />
               </div>
               <div className="program-info">
                 <span className="card-tag">Update</span>
                 <h3>New Partnership Announcement</h3>
                 <p>We are thrilled to partner with GreenEarth Initiative...</p>
                 <button className="btn-card">Read More</button>
+              </div>
+            </div>
+            <div className="program-card">
+              <div className="program-image">
+                <img src="/images/p3.jpeg" alt="Update 3" className="pos-top" />
+              </div>
+              <div className="program-info">
+                <span className="card-tag">Update</span>
+                <h3>Environmental Awareness Campaign</h3>
+                <p>Spreading awareness about sustainable practices in local communities...</p>
+                <button className="btn-card">Learn More</button>
               </div>
             </div>
           </div>
@@ -145,16 +141,10 @@ const Programs = () => {
           Blog
         </button>
         <button
-          className={`tab-btn ${activeTab === "upcoming" ? "active" : ""}`}
-          onClick={() => setActiveTab("upcoming")}
+          className={`tab-btn ${activeTab === "events" ? "active" : ""}`}
+          onClick={() => setActiveTab("events")}
         >
-          Upcoming Events
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "ongoing" ? "active" : ""}`}
-          onClick={() => setActiveTab("ongoing")}
-        >
-          Ongoing Events
+          Our Events
         </button>
         <button
           className={`tab-btn ${activeTab === "updates" ? "active" : ""}`}
