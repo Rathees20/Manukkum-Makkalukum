@@ -12,7 +12,12 @@ const Home = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  const themeCards = 3; // Total number of theme cards
+
+  // Hero image auto-slide
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
@@ -20,6 +25,29 @@ const Home = () => {
 
     return () => clearInterval(timer);
   }, [heroImages.length]);
+
+  // Mobile detection
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 900);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Theme cards auto-slide (mobile only)
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % themeCards);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(timer);
+  }, [isMobile, themeCards]);
 
   return (
     <div className="page" id="home">
@@ -130,63 +158,159 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="themes-grid">
 
-          {/* Theme 1 */}
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
-            <div className="theme-img-container">
-              <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
-                alt="Soil and Agriculture"
-              />
+        {/* Desktop: Grid Layout */}
+        {!isMobile && (
+          <div className="themes-grid">
+            {/* Theme 1 */}
+            <div className="theme-item" data-aos="fade-up" data-aos-delay="100">
+              <div className="theme-img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
+                  alt="Soil and Agriculture"
+                />
+              </div>
+              <h3>Wealth of the Soil</h3>
+              <p>
+                We believe that protecting our soil is the foundation of a prosperous society.
+                By promoting tree plantation, sustainable farming, and ecological restoration,
+                we work to revive the natural strength of the land and ensure food and water
+                security for future generations.
+              </p>
+              <button className="btn-read-more">Read More</button>
             </div>
-            <h3>Wealth of the Soil</h3>
-            <p>
-              We believe that protecting our soil is the foundation of a prosperous society.
-              By promoting tree plantation, sustainable farming, and ecological restoration,
-              we work to revive the natural strength of the land and ensure food and water
-              security for future generations.
-            </p>
-            <button className="btn-read-more">Read More</button>
-          </div>
 
-          {/* Theme 2 */}
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
-            <div className="theme-img-container">
-              <img
-                src="https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.jpg?s=1024x1024&w=is&k=20&c=DQmak_9J4DwI1y9SVeG14sZK0oYethaBQwPTEbhGUDQ="
-                alt="Tree Plantation"
-              />
+            {/* Theme 2 */}
+            <div className="theme-item" data-aos="fade-up" data-aos-delay="200">
+              <div className="theme-img-container">
+                <img
+                  src="https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.jpg?s=1024x1024&w=is&k=20&c=DQmak_9J4DwI1y9SVeG14sZK0oYethaBQwPTEbhGUDQ="
+                  alt="Tree Plantation"
+                />
+              </div>
+              <h3>Tree Plantation Movement</h3>
+              <p>
+                Inspired by the vision that nature must be protected at the right time,
+                we encourage every household to plant and nurture trees. Protecting existing
+                trees and increasing green cover ensures balanced rainfall, cleaner air,
+                and a healthier ecosystem.
+              </p>
+              <button className="btn-read-more">Read More</button>
             </div>
-            <h3>Tree Plantation Movement</h3>
-            <p>
-              Inspired by the vision that nature must be protected at the right time,
-              we encourage every household to plant and nurture trees. Protecting existing
-              trees and increasing green cover ensures balanced rainfall, cleaner air,
-              and a healthier ecosystem.
-            </p>
-            <button className="btn-read-more">Read More</button>
-          </div>
 
-          {/* Theme 3 */}
-          <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
-            <div className="theme-img-container">
-              <img
-                src="https://media.istockphoto.com/id/1549592912/photo/a-group-of-volunteers-holds-a-small-tree-in-their-hands-for-plant-concept-of-world.jpg?s=1024x1024&w=is&k=20&c=-J0G4JpiMODq_dl0dkvHCyMO6bIv0_zDOlGHM--ah1Y="
-                alt="Community Welfare"
-              />
+            {/* Theme 3 */}
+            <div className="theme-item" data-aos="fade-up" data-aos-delay="300">
+              <div className="theme-img-container">
+                <img
+                  src="https://media.istockphoto.com/id/1549592912/photo/a-group-of-volunteers-holds-a-small-tree-in-their-hands-for-plant-concept-of-world.jpg?s=1024x1024&w=is&k=20&c=-J0G4JpiMODq_dl0dkvHCyMO6bIv0_zDOlGHM--ah1Y="
+                  alt="Community Welfare"
+                />
+              </div>
+              <h3>Welfare of the People</h3>
+              <p>
+                Our mission connects environmental protection with social upliftment.
+                By restoring water bodies, conserving biodiversity, and empowering rural
+                communities, we aim to reduce poverty and create a sustainable future
+                where both land and people thrive together.
+              </p>
+              <button className="btn-read-more">Read More</button>
             </div>
-            <h3>Welfare of the People</h3>
-            <p>
-              Our mission connects environmental protection with social upliftment.
-              By restoring water bodies, conserving biodiversity, and empowering rural
-              communities, we aim to reduce poverty and create a sustainable future
-              where both land and people thrive together.
-            </p>
-            <button className="btn-read-more">Read More</button>
           </div>
+        )}
 
-        </div>
+        {/* Mobile: Carousel */}
+        {isMobile && (
+          <div className="themes-carousel-container">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                className="theme-item"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = Math.abs(offset.x) * velocity.x;
+                  if (swipe < -10000) {
+                    setCurrentSlide((prev) => (prev + 1) % themeCards);
+                  } else if (swipe > 10000) {
+                    setCurrentSlide((prev) => (prev - 1 + themeCards) % themeCards);
+                  }
+                }}
+              >
+                {currentSlide === 0 && (
+                  <>
+                    <div className="theme-img-container">
+                      <img
+                        src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=300&q=80"
+                        alt="Soil and Agriculture"
+                      />
+                    </div>
+                    <h3>Wealth of the Soil</h3>
+                    <p>
+                      We believe that protecting our soil is the foundation of a prosperous society.
+                      By promoting tree plantation, sustainable farming, and ecological restoration,
+                      we work to revive the natural strength of the land and ensure food and water
+                      security for future generations.
+                    </p>
+                    <button className="btn-read-more">Read More</button>
+                  </>
+                )}
+                {currentSlide === 1 && (
+                  <>
+                    <div className="theme-img-container">
+                      <img
+                        src="https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.jpg?s=1024x1024&w=is&k=20&c=DQmak_9J4DwI1y9SVeG14sZK0oYethaBQwPTEbhGUDQ="
+                        alt="Tree Plantation"
+                      />
+                    </div>
+                    <h3>Tree Plantation Movement</h3>
+                    <p>
+                      Inspired by the vision that nature must be protected at the right time,
+                      we encourage every household to plant and nurture trees. Protecting existing
+                      trees and increasing green cover ensures balanced rainfall, cleaner air,
+                      and a healthier ecosystem.
+                    </p>
+                    <button className="btn-read-more">Read More</button>
+                  </>
+                )}
+                {currentSlide === 2 && (
+                  <>
+                    <div className="theme-img-container">
+                      <img
+                        src="https://media.istockphoto.com/id/1549592912/photo/a-group-of-volunteers-holds-a-small-tree-in-their-hands-for-plant-concept-of-world.jpg?s=1024x1024&w=is&k=20&c=-J0G4JpiMODq_dl0dkvHCyMO6bIv0_zDOlGHM--ah1Y="
+                        alt="Community Welfare"
+                      />
+                    </div>
+                    <h3>Welfare of the People</h3>
+                    <p>
+                      Our mission connects environmental protection with social upliftment.
+                      By restoring water bodies, conserving biodiversity, and empowering rural
+                      communities, we aim to reduce poverty and create a sustainable future
+                      where both land and people thrive together.
+                    </p>
+                    <button className="btn-read-more">Read More</button>
+                  </>
+                )}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Slide Indicators */}
+            <div className="carousel-indicators">
+              {[0, 1, 2].map((index) => (
+                <button
+                  key={index}
+                  className={`indicator-dot ${currentSlide === index ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
       {/* Photo Gallery Section */}
       <section className="photo-gallery" data-aos="fade-up">
