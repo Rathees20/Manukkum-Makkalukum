@@ -37,17 +37,11 @@
   gap: 10px;
 }
 
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, var(--brand-green), #0b4e2a);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  box-shadow: 0 0 0 1px rgba(17, 122, 67, 0.4),
-    0 10px 25px rgba(0, 0, 0, 0.35);
+/* .logo-mark removed as it's replaced by an image */
+.logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-title {

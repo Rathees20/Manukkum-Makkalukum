@@ -46,8 +46,11 @@
   margin-bottom: 20px;
 }
 
-.footer-logo .logo-mark {
-  font-size: 24px;
+/* .footer-logo .logo-mark removed as it's replaced by an image */
+.footer-logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-logo h3 {

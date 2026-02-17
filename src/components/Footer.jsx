@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-column about-col">
           <div className="footer-logo">
-            <span className="logo-mark">🌱</span>
+            <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="footer-logo-image" />
             <h3>Mannukkum Makkalukum</h3>
           </div>
           <p className="footer-mission">

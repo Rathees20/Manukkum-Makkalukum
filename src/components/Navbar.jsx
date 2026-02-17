@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-left" onClick={() => handleNavClick("#home")} style={{ cursor: 'pointer' }}>
-        <span className="logo-mark">🌱</span>
+        <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="logo-image" />
         <div>
           <div className="logo-title">Mannukkum Makkalukum</div>
           <div className="logo-subtitle">Environmental Trust</div>
