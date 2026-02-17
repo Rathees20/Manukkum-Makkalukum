@@ -16,15 +16,36 @@ const SectionHeader = ({ darkText, greenText }) => (
 
 const About = () => {
   const teamMembers = [
-    { name: "John Doe", role: "Founder & Chairman", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-    { name: "Jane Smith", role: "Managing Director", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" },
-    { name: "Robert Wilson", role: "Chief Coordinator", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-    { name: "Sarah Miller", role: "Project Lead", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" },
-    { name: "Michael Chen", role: "Environmental Specialist", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-    { name: "Emily Brown", role: "Community Outreach", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-    { name: "David Kumar", role: "Field Supervisor", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-    { name: "Lisa Anderson", role: "Communication Manager", img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=300&q=80" },
-    { name: "Kevin Paul", role: "Volunteer Coordinator", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
+    {
+      name: "M.Soundara Raja BE.,MA",
+      role: "Founder & President of MM Trust",
+      designation: "Film Actor & Social Activist",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      name: "M.Thiyagarajan BA",
+      role: "General Secretary of MM Trust",
+      designation: "Financier & Milk Society",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" // Placeholder, using Robert's image
+    },
+    {
+      name: "J. Tamanna Bsc.,MA",
+      role: "Treasurer of MM Trust",
+      designation: "CEO of Green Apple Media", // Corrected Geeen to Green
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" // Placeholder, using Jane's image
+    },
+    {
+      name: "Karthik Rajkumar",
+      role: "Joint General Secretary of MM Trust", // Corrected Secaratray
+      designation: "Film Art Director & Production Designer",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" // Placeholder
+    },
+    {
+      name: "R.Ilangovan Dcop",
+      role: "Deputy General Secretary of MM Trust", // Corrected Secaratray
+      designation: "Ex President of Co-operative Society", // Corrected Preaident
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" // Placeholder
+    },
   ];
 
   return (
@@ -122,7 +143,91 @@ const About = () => {
                 <img src={member.img} alt={member.name} />
               </div>
               <h4>{member.name}</h4>
-              <p>{member.role}</p>
+              <p className="team-designation">{member.designation}</p>
+              <p className="team-role">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Mentors & Advisors Section */}
+      <section className="about-custom-section">
+        <SectionHeader darkText="Our" greenText="Mentors & Advisors" />
+        <div className="mentor-grid">
+          {[
+            {
+              name: "Nasar",
+              role: "President of South Indian Film Artiste Association - Chennai",
+              designation: "Film Actor, Writer & Producer",
+              img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" // Placeholder
+            },
+            {
+              name: "Dr. Muthukumar MBBS",
+              role: "Advisor",
+              designation: "Medical Professional",
+              img: "https://images.unsplash.com/photo-1537368910025-bc005caeb1f5?auto=format&fit=crop&w=300&q=80" // Placeholder
+            },
+            {
+              name: "Dr. Saranya Jaykumar",
+              role: "Advisor",
+              designation: "Educationalist",
+              img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" // Placeholder
+            },
+            {
+              name: "Chitra Kumaresan",
+              role: "Advisor",
+              designation: "Social Worker",
+              img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" // Placeholder
+            }
+          ].map((mentor, index) => (
+            <div
+              key={index}
+              className="mentor-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div className="mentor-img-container">
+                <img src={mentor.img} alt={mentor.name} />
+              </div>
+              <div className="mentor-details">
+                <h4>{mentor.name}</h4>
+                <p className="mentor-designation">{mentor.designation}</p>
+                <p className="mentor-role">{mentor.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Trustee Section */}
+      <section className="about-custom-section">
+        <SectionHeader darkText="Our" greenText="Trustees" />
+        <div className="mentor-grid">
+          {[
+            "M. Rajeshwari",
+            "Sahadevan",
+            "Nagendran",
+            "C.Arunkumar",
+            "T. Vettrivel Raja",
+            "S. Mohan Ram",
+            "S. Thuvaraka"
+          ].map((name, index) => (
+            <div
+              key={index}
+              className="mentor-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div className="mentor-img-container">
+                <img
+                  src={`https://ui-avatars.com/api/?name=${name}&background=random&color=fff&size=256`}
+                  alt={name}
+                />
+              </div>
+              <div className="mentor-details">
+                <h4>{name}</h4>
+                <p className="mentor-role">Trustee</p>
+              </div>
             </div>
           ))}
         </div>

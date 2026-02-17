@@ -299,8 +299,9 @@
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     margin-top: 20px;
 }
@@ -312,6 +313,8 @@
     border-radius: 20px;
     border: 1px solid var(--border-soft);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 1 350px;
+    width: 100%;
 }
 
 .team-card:hover {
@@ -341,21 +344,28 @@
 }
 
 .team-card p {
-    font-size: 14px;
-    color: #666666;
     margin: 0;
 }
 
+.team-designation {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px !important;
+    font-weight: 500;
+}
+
+.team-role {
+    font-size: 14px;
+    color: var(--brand-green);
+    font-weight: 600;
+}
+
 @media (max-width: 900px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Flexbox handles wrapping automatically */
 }
 
 @media (max-width: 600px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
+    /* Flexbox handles wrapping automatically */
 
     .custom-section-header h2 {
         font-size: 22px;
@@ -364,4 +374,76 @@
     .team-img-container {
         width: 120px;
     }
+}
+
+/* Mentor Section Styles */
+.mentor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.mentor-card {
+    text-align: center;
+    background: white;
+    padding: 0;
+    border-radius: 20px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 1 calc(25% - 23px);
+    /* Fit 4 cards per row (gap is 30px) */
+    width: 100%;
+    overflow: hidden;
+    min-width: 250px;
+    /* Ensure cards don't get too small */
+}
+
+.mentor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: var(--brand-green-soft);
+}
+
+.mentor-img-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+}
+
+.mentor-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mentor-details {
+    padding: 20px;
+}
+
+.mentor-card h4 {
+    margin: 0 0 4px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mentor-designation {
+    font-size: 13px;
+    color: var(--brand-green);
+    margin-bottom: 6px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mentor-role {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
 }
