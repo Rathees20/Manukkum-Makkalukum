@@ -8,7 +8,7 @@ const Home = () => {
 
   const heroImages = [
     "/images/img01 (13).jpeg",
-    "/images/img01 (7).jpeg"
+    "/images/img2.jpeg"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -81,15 +81,7 @@ const Home = () => {
             >
               <span className="highlight">மண்ணுக்கும் மக்களுக்கும்</span>
             </motion.h1>
-            <motion.p
-              className="hero-text"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              Planting trees for a greener tomorrow and building kinder,
-              climate-resilient communities.
-            </motion.p>
+
             <motion.p
               className="hero-text"
               initial={{ opacity: 0 }}

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import DonationModal from "./DonationModal";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -34,39 +36,55 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="navbar-left" onClick={() => handleNavClick("#home")} style={{ cursor: 'pointer' }}>
-        <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="logo-image" />
-        <div>
-          <div className="logo-title">Mannukkum Makkalukum</div>
-          <div className="logo-subtitle">Environmental Trust</div>
+    <>
+      <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <div className="navbar-left" onClick={() => handleNavClick("#home")} style={{ cursor: 'pointer' }}>
+          <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="logo-image" />
+          <div>
+            <div className="logo-title">Mannukkum Makkalukum</div>
+            <div className="logo-subtitle">Environmental Trust</div>
+          </div>
         </div>
-      </div>
 
-      <button
-        className={`navbar-toggle ${isOpen ? "open" : ""}`}
-        onClick={() => setIsOpen((prev) => !prev)}
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded={isOpen}
-        aria-controls="mobile-nav"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        <button
+          className={`navbar-toggle ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-      <nav id="mobile-nav" className={`navbar-links ${isOpen ? "open" : ""}`}>
-        <a onClick={() => handleNavClick("#home")}>Home</a>
-        <a onClick={() => handleNavClick("/about")}>About</a>
-        {/* <a onClick={() => handleNavClick("#focus-themes")}>Focus Areas</a> */}
-        <a onClick={() => handleNavClick("#programs")}>Programs</a>
-        <a onClick={() => handleNavClick("#impact")}>Impact</a>
-        <a onClick={() => handleNavClick("#get-involved")}>Get Involved</a>
-        <a onClick={() => handleNavClick("/contact")}>Contact</a>
-      </nav>
-    </header>
+        <nav id="mobile-nav" className={`navbar-links ${isOpen ? "open" : ""}`}>
+          <a onClick={() => handleNavClick("#home")}>Home</a>
+          <a onClick={() => handleNavClick("/about")}>About</a>
+          <a onClick={() => handleNavClick("#programs")}>Programs</a>
+          <a onClick={() => handleNavClick("#impact")}>Impact</a>
+          <a onClick={() => handleNavClick("#get-involved")}>Get Involved</a>
+          <a onClick={() => handleNavClick("/contact")}>Contact</a>
+          <button
+            className="donate-nav-button"
+            onClick={() => {
+              setIsDonationModalOpen(true);
+              setIsOpen(false);
+            }}
+          >
+            Donate
+          </button>
+        </nav>
+      </header>
+
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={() => setIsDonationModalOpen(false)}
+      />
+    </>
   );
 };
+
 
 export default Navbar;
