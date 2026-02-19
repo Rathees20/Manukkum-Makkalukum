@@ -42,7 +42,7 @@ const Navbar = () => {
           <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="logo-image" />
           <div>
             <div className="logo-title">Mannukkum Makkalukum</div>
-            <div className="logo-subtitle">Environmental Trust</div>
+            <div className="logo-subtitle">Social Welfare Trust</div>
           </div>
         </div>
 
