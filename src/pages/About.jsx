@@ -20,31 +20,31 @@ const About = () => {
       name: "M.Soundara Raja BE.,MA",
       role: "Founder & President of MM Trust",
       designation: "Film Actor & Social Activist",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
+      img: "/images/Soundara Raja.jpeg"
     },
     {
       name: "M.Thiyagarajan BA",
       role: "General Secretary of MM Trust",
       designation: "Financier & Milk Society",
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" // Placeholder, using Robert's image
+      img: "/images/Thiyagarajan.jpeg"
     },
     {
       name: "J. Tamanna Bsc.,MA",
       role: "Treasurer of MM Trust",
-      designation: "CEO of Green Apple Media", // Corrected Geeen to Green
-      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" // Placeholder, using Jane's image
+      designation: "CEO of Green Apple Media",
+      img: "/images/Tamanna.jpeg"
     },
     {
       name: "Karthik Rajkumar",
-      role: "Joint General Secretary of MM Trust", // Corrected Secaratray
+      role: "Joint General Secretary of MM Trust",
       designation: "Film Art Director & Production Designer",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" // Placeholder
+      img: "/images/Karthik Rajkumar.jpeg"
     },
     {
       name: "R.Ilangovan Dcop",
-      role: "Deputy General Secretary of MM Trust", // Corrected Secaratray
-      designation: "Ex President of Co-operative Society", // Corrected Preaident
-      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" // Placeholder
+      role: "Deputy General Secretary of MM Trust",
+      designation: "Ex President of Co-operative Society",
+      img: "/images/Ilangovan.jpeg"
     },
   ];
 
