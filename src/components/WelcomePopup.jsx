@@ -38,7 +38,13 @@ export default function WelcomePopup() {
             className="welcomePopup-image"
           />
           <div className="welcomePopup-overlay-content">
-            <h3 className="welcomePopup-title">வீட்டுக்கு ஒருவர் சுற்றுச்சூழலை காக்க வேண்டும்.</h3>
+            <div className="welcomePopup-quote-container">
+              <p className="welcomePopup-quote-tamil">"வீட்டுக்கொருவர் சுற்றுச் சூழலை பாதுகாக்க முன் வர வேண்டும்"</p>
+              <p className="welcomePopup-credit-tamil">மு. சௌந்தர ராஜா</p>
+              <div className="quote-divider"></div>
+              <p className="welcomePopup-quote-english">"From Every Home, One Must Rise to Save Nature and Environment.”</p>
+              <p className="welcomePopup-credit-english">— M. Soundara Raja</p>
+            </div>
           </div>
         </div>
       </div>
