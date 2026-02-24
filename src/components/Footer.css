@@ -59,6 +59,14 @@
   color: #cde9d7;
 }
 
+.reg-no {
+  font-size: 11px;
+  color: #7d9685;
+  margin: 4px 0 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 .footer-mission {
   font-size: 14px;
   line-height: 1.6;

@@ -22,7 +22,6 @@ const App = () => {
   }, []);
   return (
     <div className="app">
-      <WelcomePopup />
       <Navbar />
       <main className="main-content">
         <Routes>
@@ -30,6 +29,7 @@ const App = () => {
             path="/"
             element={
               <>
+                <WelcomePopup />
                 <Home />
                 <Programs />
                 <Impact />

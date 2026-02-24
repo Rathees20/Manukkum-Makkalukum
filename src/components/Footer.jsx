@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Linkedin, MapPin, Mail, Phone, ChevronRight } from "lucide-react";
+import { Facebook, Instagram, Twitter, MapPin, Mail, Phone, ChevronRight, Globe } from "lucide-react";
 import "./Footer.css";
 
 const Footer = () => {
@@ -25,19 +25,23 @@ const Footer = () => {
           <div className="footer-logo">
             <img src="/images/LOGO ReCrate.png" alt="Mannukkum Makkalukum Logo" className="footer-logo-image" />
             <h3>Mannukkum Makkalukum</h3>
+            <p className="reg-no">Registration No: 4/25/2020</p>
           </div>
           <p className="footer-mission">
             A conservation NGO dedicated to ecology, environment, wildlife, and sustainable natural resource management. Rooted in the soil, dedicated to people.
           </p>
           <div className="footer-social">
-            <a href="#" className="social-icon" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1GYJdgoABY/" className="social-icon" aria-label="Facebook">
               <Facebook size={20} />
             </a>
-            <a href="https://www.instagram.com/mm_trust/?hl=en" className="social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/mannukkummakkalukkum" className="social-icon" aria-label="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="#" className="social-icon" aria-label="Twitter">
+            <a href="https://x.com/MMTrustofficial" className="social-icon" aria-label="Twitter">
               <Twitter size={20} />
+            </a>
+            <a href="https://en.wikipedia.org/wiki/Mannukkum_Makkalukkum" className="social-icon" aria-label="Wikipedia">
+              <Globe size={20} />
             </a>
           </div>
         </div>
@@ -58,19 +62,23 @@ const Footer = () => {
           <div className="footer-contact">
             <div className="contact-item">
               <MapPin size={18} className="contact-icon" />
-              <p><strong>HQ:</strong> 123 Nature Way, Green City, Tamil Nadu, India</p>
+              <p><strong>HQ:</strong> Traventure Sunshine Apartment, Plot No: 67, Flat No - B, 2nd Floor, 7th Street, Sree Sayee Nagar, Virugambakkam, Chennai - 600 092</p>
             </div>
             <div className="contact-item">
               <Mail size={18} className="contact-icon" />
-              <p><strong>Email:</strong> contact@mannukkummakkalukum.org</p>
+              <p><strong>Email:</strong> mannukkummakkalukkum@gmail.com</p>
             </div>
             <div className="contact-item">
               <Phone size={18} className="contact-icon" />
-              <p><strong>Phone:</strong> +91-33-22234148</p>
+              <p><strong>Phone:</strong> +91 98400 32144</p>
             </div>
             <div className="contact-item">
               <Phone size={18} className="contact-icon" />
-              <p><strong>Phone:</strong> +91-44-98765432</p>
+              <p><strong>Phone:</strong> +91 98421 25239</p>
+            </div>
+            <div className="contact-item">
+              <Phone size={18} className="contact-icon" />
+              <p><strong>Phone:</strong> +91 73958 44061</p>
             </div>
           </div>
         </div>

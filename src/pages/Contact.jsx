@@ -1,4 +1,5 @@
 import React from "react";
+import { Instagram, Facebook, Twitter, Globe } from "lucide-react";
 import "./SharedSections.css";
 import "./Contact.css";
 
@@ -27,20 +28,21 @@ const Contact = () => {
           <div className="contact-info" data-aos="fade-right">
             <div className="office-grid">
               <div className="office-card">
-                <h3>Registered Office</h3>
-                <p>123 Nature Way, Green City,<br />Tamil Nadu, India - 600001</p>
-                <p><strong>Phone:</strong> +91 44 2345 6789</p>
-              </div>
-              <div className="office-card">
-                <h3>Administrative Office</h3>
-                <p>456 People Plaza, Eco Park,<br />Chennai, India - 600032</p>
-                <p><strong>Phone:</strong> +91 44 9876 5432</p>
+                <h3>Our Office</h3>
+                <p>Traventure Sunshine Apartment,<br />
+                  Plot No: 67, Flat No - B, 2nd Floor,<br />
+                  7th Street, Sree Sayee Nagar,<br />
+                  Virugambakkam, Chennai - 600 092</p>
+                <div className="contact-numbers">
+                  <p><strong>Phone:</strong> +91 98400 32144</p>
+                  <p><strong>Phone:</strong> +91 98421 25239</p>
+                  <p><strong>Phone:</strong> +91 73958 44061</p>
+                </div>
               </div>
             </div>
 
             <div className="contact-methods">
-              <p><strong>General Email:</strong> contact@mannukkummakkalukum.org</p>
-              <p><strong>Support Phone:</strong> +91 90000 00000</p>
+              <p><strong>General Email:</strong> mannukkummakkalukkum@gmail.com</p>
             </div>
 
             <div className="field-offices">
@@ -57,9 +59,18 @@ const Contact = () => {
             <div className="social-links">
               <h3>Follow Us</h3>
               <div className="social-icons">
-                <a href="#" className="social-icon">Instagram</a>
-                <a href="#" className="social-icon">Facebook</a>
-                <a href="#" className="social-icon">Twitter</a>
+                <a href="https://www.instagram.com/mannukkummakkalukkum" className="social-icon" aria-label="Instagram">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://www.facebook.com/share/1GYJdgoABY/" className="social-icon" aria-label="Facebook">
+                  <Facebook size={24} />
+                </a>
+                <a href="https://x.com/MMTrustofficial" className="social-icon" aria-label="Twitter">
+                  <Twitter size={24} />
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Mannukkum_Makkalukkum" className="social-icon" aria-label="Wikipedia">
+                  <Globe size={24} />
+                </a>
               </div>
             </div>
 

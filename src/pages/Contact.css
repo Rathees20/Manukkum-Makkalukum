@@ -139,17 +139,41 @@
 .social-icons {
   display: flex;
   gap: 15px;
+  margin-top: 10px;
 }
 
 .social-icon {
-  font-size: 14px;
-  color: var(--brand-green);
-  font-weight: 600;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-green-soft);
+  color: var(--brand-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
 }
 
 .social-icon:hover {
-  text-decoration: underline;
+  background: var(--brand-green-dark);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(17, 122, 67, 0.2);
+  text-decoration: none;
+}
+
+/* Specific styling for the phone numbers section added in Contact.jsx */
+.contact-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.contact-numbers p {
+  margin: 0 !important;
 }
 
 .bank-details {

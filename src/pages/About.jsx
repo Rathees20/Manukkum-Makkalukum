@@ -198,7 +198,7 @@ const About = () => {
               name: "Nassar",
               role: "Nassar is an Indian actor. He is an Indian Film Actor, Film Producer, Film Director & Voice Artist who is well-known for his work in Tamil, Telugu, Kannada, Malayalam, Hindi and English movies.",
               designation: "Film Actor, Film Producer, Film Director & Voice Artist",
-              img: "/images/Nassar15.jpg"
+              img: "/images/Nassar15.jpeg"
             },
             {
               name: "Dr. Muthukumar Subramaniam",
@@ -225,9 +225,9 @@ const About = () => {
       </section>
 
       {/* Trustee Section */}
-      <section className="about-custom-section">
+      <section className="about-custom-section trustees-section">
         <SectionHeader darkText="Our" greenText="Trustees" />
-        <div className="mentor-grid">
+        <div className="trustee-names-container" data-aos="fade-up">
           {[
             "M. Rajeshwari",
             "Sahadevan",
@@ -237,22 +237,9 @@ const About = () => {
             "S. Mohan Ram",
             "S. Thuvaraka"
           ].map((name, index) => (
-            <div
-              key={index}
-              className="mentor-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="mentor-img-container">
-                <img
-                  src={`https://ui-avatars.com/api/?name=${name}&background=random&color=fff&size=256`}
-                  alt={name}
-                />
-              </div>
-              <div className="mentor-details">
-                <h4>{name}</h4>
-                <p className="mentor-role">Trustee</p>
-              </div>
+            <div key={index} className="trustee-name-item">
+              <span className="dot"></span>
+              {name}
             </div>
           ))}
         </div>
