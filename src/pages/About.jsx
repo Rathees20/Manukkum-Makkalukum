@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SharedSections.css";
 import "./About.css";
 import { GiPlantRoots, GiWheat, GiLightBulb, GiPineTree } from "react-icons/gi";
@@ -13,6 +13,45 @@ const SectionHeader = ({ darkText, greenText }) => (
     <div className="header-line"></div>
   </div>
 );
+
+const MentorCard = ({ mentor, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const bioLimit = 150;
+  const shouldTruncate = mentor.role.length > bioLimit;
+
+  const displayRole = isExpanded || !shouldTruncate
+    ? mentor.role
+    : `${mentor.role.substring(0, bioLimit)}...`;
+
+  return (
+    <div
+      className={`mentor-card ${!mentor.img ? 'no-image-card' : ''} ${isExpanded ? 'expanded' : ''}`}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
+      {mentor.img && (
+        <div className="mentor-img-container">
+          <img src={mentor.img} alt={mentor.name} />
+        </div>
+      )}
+      <div className="mentor-details">
+        <h4>{mentor.name}</h4>
+        <p className="mentor-designation">{mentor.designation}</p>
+        <p className="mentor-role">
+          {displayRole}
+          {shouldTruncate && (
+            <button
+              className="read-more-btn"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? " Read Less" : " Read More"}
+            </button>
+          )}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   const teamMembers = [
@@ -156,45 +195,31 @@ const About = () => {
         <div className="mentor-grid">
           {[
             {
-              name: "Nasar",
-              role: "President of South Indian Film Artiste Association - Chennai",
-              designation: "Film Actor, Writer & Producer",
-              img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" // Placeholder
+              name: "Nassar",
+              role: "Nassar is an Indian actor. He is an Indian Film Actor, Film Producer, Film Director & Voice Artist who is well-known for his work in Tamil, Telugu, Kannada, Malayalam, Hindi and English movies.",
+              designation: "Film Actor, Film Producer, Film Director & Voice Artist",
+              img: "/images/Nassar15.jpg"
             },
             {
-              name: "Dr. Muthukumar MBBS",
-              role: "Advisor",
+              name: "Dr. Muthukumar Subramaniam",
+              role: "56 years. Born and brought up in nagercoil ,the southern most town of India. 28 years of service in the field of medicine. Specialized in the department of Diabetology and working for Dr. Mohan's Diabetes specialities center, Annanagar as senior consultant.",
               designation: "Medical Professional",
-              img: "https://images.unsplash.com/photo-1537368910025-bc005caeb1f5?auto=format&fit=crop&w=300&q=80" // Placeholder
+              img: "/images/muthu.jpeg"
             },
             {
-              name: "Dr. Saranya Jaykumar",
-              role: "Advisor",
-              designation: "Educationalist",
-              img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" // Placeholder
+              name: "Dr. Saranya Jaikumar",
+              role: "Dr. Saranya Jaikumar is one of India's first Doctorates in Educational Psychology and has made a significant impact in the field through her academic expertise and commitment to student development. As the founder of Voxdemy, she has tutored and mentored more than 7,000 psychology students across the globe, empowering learners with practical skills, academic clarity, and professional confidence. She serves as an Independent Expert to the Ministry of Women & Child Development, Government of India, Tamil Nadu Police Department, Samagra Shiksha, and numerous schools and colleges across India.",
+              designation: "Educational Psychologist",
+              img: "/images/c2.png"
             },
             {
               name: "Chitra Kumaresan",
               role: "Advisor",
               designation: "Social Worker",
-              img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" // Placeholder
+              img: null
             }
           ].map((mentor, index) => (
-            <div
-              key={index}
-              className="mentor-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="mentor-img-container">
-                <img src={mentor.img} alt={mentor.name} />
-              </div>
-              <div className="mentor-details">
-                <h4>{mentor.name}</h4>
-                <p className="mentor-designation">{mentor.designation}</p>
-                <p className="mentor-role">{mentor.role}</p>
-              </div>
-            </div>
+            <MentorCard key={index} mentor={mentor} index={index} />
           ))}
         </div>
       </section>

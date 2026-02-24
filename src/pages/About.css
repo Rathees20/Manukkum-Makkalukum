@@ -464,3 +464,60 @@
     color: #666;
     line-height: 1.4;
 }
+
+.no-image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    /* Match height of cards with images roughly */
+}
+
+.no-image-card .mentor-details {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-image-card h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.no-image-card .mentor-designation {
+    font-size: 15px;
+    margin-bottom: 15px !important;
+}
+
+.no-image-card .mentor-role {
+    font-size: 15px;
+    color: #444;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--brand-green);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+.read-more-btn:hover {
+    color: var(--brand-green-dark);
+}
+
+.mentor-card.expanded {
+    height: auto !important;
+    min-height: 450px;
+}
+
+.mentor-card.expanded .mentor-role {
+    display: block;
+}
