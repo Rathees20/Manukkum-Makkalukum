@@ -1,0 +1,405 @@
+/* ═══════════════════════════════════════════════
+   Initiatives Page – Initiatives.css
+═══════════════════════════════════════════════ */
+
+:root {
+    --ini-green: #1a5d1a;
+    --ini-green-mid: #348a34;
+    --ini-yellow: #f4ce14;
+    --ini-bg: #f5fdf5;
+    --ini-card-bg: #ffffff;
+    --ini-text: #1a2e1a;
+    --ini-muted: #6b7280;
+    --ini-border: #e2ede2;
+}
+
+.initiatives-page {
+    background: var(--ini-bg);
+    min-height: 200vh;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.initiatives-hero {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -32px;
+    /* Pull up to the top edge, past .app padding and .main-content margin */
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #051a05 0%, #1a5d1a 45%, #f4ce14 100%);
+}
+
+.initiatives-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("https://images.unsplash.com/photo-1591259622709-bdb033b4be2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvdGVzdHN8ZW58MHwwfDB8fHww") center / cover no-repeat;
+    opacity: 0.25;
+}
+
+.initiatives-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 8.5rem 2.5rem 5.5rem;
+    max-width: 700px;
+}
+
+.initiatives-eyebrow {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--ini-yellow);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.35rem 1.3rem;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+}
+
+.initiatives-hero-title {
+    color: #fff;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.9rem;
+    line-height: 1.1;
+}
+
+.initiatives-hero-sub {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.initiatives-hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.initiatives-hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+/* ─────────────────────────────────────────────
+   TAB BAR
+───────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────
+   BODY
+───────────────────────────────────────────── */
+.initiatives-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+}
+
+/* ── Section Intro ── */
+.ini-section-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.ini-intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, var(--ini-green), var(--ini-green-mid));
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    margin-bottom: 1.1rem;
+}
+
+.ini-badge-icon {
+    flex-shrink: 0;
+}
+
+.ini-section-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--ini-text);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+}
+
+.ini-section-desc {
+    color: var(--ini-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────
+   TIMELINE
+───────────────────────────────────────────── */
+.ini-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 0 2rem;
+}
+
+/* Central vertical spine */
+.ini-timeline-spine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--ini-green), var(--ini-yellow));
+    transform: translateX(-50%);
+    border-radius: 999px;
+    z-index: 0;
+}
+
+/* Timeline item row */
+.ini-timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ini-timeline-item.left {
+    flex-direction: row;
+    padding-right: calc(50% + 2rem);
+}
+
+.ini-timeline-item.right {
+    flex-direction: row-reverse;
+    padding-left: calc(50% + 2rem);
+}
+
+/* Center icon node */
+.ini-timeline-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--ini-green), var(--ini-green-mid));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 0 0 5px var(--ini-bg), 0 4px 20px rgba(26, 93, 26, 0.3);
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+/* ── Protest Card ── */
+.ini-protest-card {
+    background: var(--ini-card-bg);
+    border: 1.5px solid var(--ini-border);
+    border-radius: 18px;
+    padding: 1.5rem 1.6rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s;
+    box-shadow: 0 4px 20px rgba(82, 3, 120, 0.07);
+    width: 100%;
+}
+
+.ini-protest-card:hover,
+.ini-protest-card.expanded {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(26, 93, 26, 0.15);
+    border-color: var(--ini-green-mid);
+}
+
+.ini-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.ini-card-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 999px;
+}
+
+.ini-card-year {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ini-muted);
+    margin-left: auto;
+    background: rgba(26, 93, 26, 0.1);
+    padding: 0.18rem 0.7rem;
+    border-radius: 999px;
+}
+
+.ini-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ini-text);
+    margin: 0 0 0.5rem;
+    line-height: 1.35;
+}
+
+.ini-card-image {
+    width: calc(100% + 3.2rem);
+    margin: -1.5rem -1.6rem 1.2rem;
+    height: 180px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+}
+
+.ini-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ini-protest-card:hover .ini-card-image img {
+    transform: scale(1.05);
+}
+
+.ini-card-desc {
+    color: var(--ini-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin: 0 0 0.7rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s;
+    opacity: 0;
+}
+
+.ini-card-desc.show {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.ini-card-toggle {
+    background: none;
+    border: none;
+    color: var(--ini-green);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s;
+}
+
+.ini-card-toggle:hover {
+    opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────────
+   QUOTE BANNER
+───────────────────────────────────────────── */
+.ini-quote-banner {
+    margin-top: 4.5rem;
+    background: linear-gradient(135deg, var(--ini-green) 0%, var(--ini-yellow) 100%);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ini-quote-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
+}
+
+.ini-quote-mark {
+    font-size: 5rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.2);
+    font-family: Georgia, serif;
+    margin-bottom: -1rem;
+}
+
+.ini-quote-banner blockquote {
+    color: #fff;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ini-quote-banner cite {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .ini-timeline-spine {
+        display: none;
+    }
+
+    .ini-timeline-item.left,
+    .ini-timeline-item.right {
+        flex-direction: column;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .ini-timeline-node {
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 0 auto 0.75rem;
+    }
+
+    .initiatives-tabs {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .ini-tab {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+}

@@ -18,18 +18,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (hash) => {
-    if (hash === "/about" || hash === "/contact") {
-      navigate(hash);
+  const handleNavClick = (path) => {
+    if (["/about", "/contact", "/gallery", "/initiatives"].includes(path)) {
+      navigate(path);
       window.scrollTo(0, 0);
     } else {
       if (location.pathname !== "/") {
         navigate("/");
         setTimeout(() => {
-          window.location.hash = hash;
+          window.location.hash = path;
         }, 100);
       } else {
-        window.location.hash = hash;
+        window.location.hash = path;
       }
     }
     setIsOpen(false);
@@ -61,10 +61,9 @@ const Navbar = () => {
 
         <nav id="mobile-nav" className={`navbar-links ${isOpen ? "open" : ""}`}>
           <a onClick={() => handleNavClick("#home")}>Home</a>
-          <a onClick={() => handleNavClick("/about")}>About</a>
-          <a onClick={() => handleNavClick("#programs")}>Programs</a>
-          <a onClick={() => handleNavClick("#impact")}>Impact</a>
-          <a onClick={() => handleNavClick("#get-involved")}>Get Involved</a>
+          <a onClick={() => handleNavClick("/about")}>About Us</a>
+          <a onClick={() => handleNavClick("/initiatives")}>Initiatives</a>
+          <a onClick={() => handleNavClick("/gallery")}>Gallery</a>
           <a onClick={() => handleNavClick("/contact")}>Contact</a>
           <button
             className="donate-nav-button"

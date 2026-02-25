@@ -211,12 +211,6 @@ const About = () => {
               role: "Dr. Saranya Jaikumar is one of India's first Doctorates in Educational Psychology and has made a significant impact in the field through her academic expertise and commitment to student development. As the founder of Voxdemy, she has tutored and mentored more than 7,000 psychology students across the globe, empowering learners with practical skills, academic clarity, and professional confidence. She serves as an Independent Expert to the Ministry of Women & Child Development, Government of India, Tamil Nadu Police Department, Samagra Shiksha, and numerous schools and colleges across India.",
               designation: "Educational Psychologist",
               img: "/images/c2.png"
-            },
-            {
-              name: "Chitra Kumaresan",
-              role: "Advisor",
-              designation: "Social Worker",
-              img: null
             }
           ].map((mentor, index) => (
             <MentorCard key={index} mentor={mentor} index={index} />

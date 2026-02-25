@@ -11,6 +11,8 @@ import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import GetInvolved from "./pages/GetInvolved";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
+import Initiatives from "./pages/Initiatives";
 
 const App = () => {
   useEffect(() => {
@@ -39,6 +41,8 @@ const App = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/initiatives" element={<Initiatives />} />
         </Routes>
       </main>
       <Footer />
