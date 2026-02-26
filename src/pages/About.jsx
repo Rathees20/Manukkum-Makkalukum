@@ -14,20 +14,14 @@ const SectionHeader = ({ darkText, greenText }) => (
   </div>
 );
 
-const MentorCard = ({ mentor, index }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const bioLimit = 150;
-  const shouldTruncate = mentor.role.length > bioLimit;
-
-  const displayRole = isExpanded || !shouldTruncate
-    ? mentor.role
-    : `${mentor.role.substring(0, bioLimit)}...`;
-
+const MentorCard = ({ mentor, index, onImageClick }) => {
   return (
     <div
-      className={`mentor-card ${!mentor.img ? 'no-image-card' : ''} ${isExpanded ? 'expanded' : ''}`}
+      className={`mentor-card ${!mentor.img ? 'no-image-card' : ''}`}
       data-aos="fade-up"
       data-aos-delay={index * 100}
+      onClick={() => onImageClick(mentor)}
+      style={{ cursor: "pointer" }}
     >
       {mentor.img && (
         <div className="mentor-img-container">
@@ -37,23 +31,14 @@ const MentorCard = ({ mentor, index }) => {
       <div className="mentor-details">
         <h4>{mentor.name}</h4>
         <p className="mentor-designation">{mentor.designation}</p>
-        <p className="mentor-role">
-          {displayRole}
-          {shouldTruncate && (
-            <button
-              className="read-more-btn"
-              onClick={() => setIsExpanded(!isExpanded)}
-            >
-              {isExpanded ? " Read Less" : " Read More"}
-            </button>
-          )}
-        </p>
       </div>
     </div>
   );
 };
 
 const About = () => {
+  const [selectedMentor, setSelectedMentor] = useState(null);
+
   const teamMembers = [
     {
       name: "M.Soundara Raja BE.,MA",
@@ -213,7 +198,7 @@ const About = () => {
               img: "/images/c2.png"
             }
           ].map((mentor, index) => (
-            <MentorCard key={index} mentor={mentor} index={index} />
+            <MentorCard key={index} mentor={mentor} index={index} onImageClick={setSelectedMentor} />
           ))}
         </div>
       </section>
@@ -238,6 +223,27 @@ const About = () => {
           ))}
         </div>
       </section>
+
+      {/* Mentor Modal */}
+      {selectedMentor && (
+        <div className="mentor-modal-overlay" onClick={() => setSelectedMentor(null)}>
+          <div className="mentor-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="mentor-modal-close" onClick={() => setSelectedMentor(null)}>&times;</button>
+            <div className="mentor-modal-body">
+              {selectedMentor.img && (
+                <div className="mentor-modal-img">
+                  <img src={selectedMentor.img} alt={selectedMentor.name} />
+                </div>
+              )}
+              <div className="mentor-modal-info">
+                <h3>{selectedMentor.name}</h3>
+                <p className="mentor-modal-designation">{selectedMentor.designation}</p>
+                <p className="mentor-modal-role">{selectedMentor.role}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

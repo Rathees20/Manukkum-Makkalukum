@@ -405,31 +405,40 @@
     background: white;
     padding: 0;
     border-radius: 20px;
-    border: 1px solid var(--border-soft);
+    border: 2px solid var(--border-soft);
+    /* Increased density from 1px to 2px */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     flex: 0 1 calc(25% - 23px);
     /* Fit 4 cards per row (gap is 30px) */
     width: 100%;
     overflow: hidden;
     min-width: 250px;
     /* Ensure cards don't get too small */
+    cursor: pointer;
 }
 
 .mentor-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    border-color: var(--brand-green-soft);
+    border-color: var(--brand-green);
 }
 
 .mentor-img-container {
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 4;
-    /* Portrait aspect ratio */
     border-radius: 0;
     margin: 0;
-    border: none;
+    border: 8px solid transparent;
+    /* Increased density from 4px to 8px */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mentor-card:hover .mentor-img-container {
+    border-color: var(--brand-green);
 }
 
 .mentor-img-container img {
@@ -437,10 +446,22 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    transition: transform 0.4s ease;
+}
+
+.mentor-card:hover img {
+    transform: scale(1.05);
 }
 
 .mentor-details {
     padding: 20px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.mentor-card:hover .mentor-details {
+    background-color: #f0f9f1;
+    /* Light brand green */
 }
 
 .mentor-card h4 {
@@ -496,31 +517,7 @@
     color: #444;
 }
 
-.read-more-btn {
-    background: none;
-    border: none;
-    color: var(--brand-green);
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 13px;
-    padding: 0;
-    margin-left: 5px;
-    transition: color 0.3s ease;
-    text-decoration: underline;
-}
 
-.read-more-btn:hover {
-    color: var(--brand-green-dark);
-}
-
-.mentor-card.expanded {
-    height: auto !important;
-    min-height: 450px;
-}
-
-.mentor-card.expanded .mentor-role {
-    display: block;
-}
 
 /* Trustee Names Section Styles */
 .trustee-names-container {
@@ -567,5 +564,120 @@
     .trustee-names-container {
         grid-template-columns: 1fr;
         padding: 20px;
+    }
+}
+
+/* Mentor Modal Styles */
+.mentor-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.mentor-modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mentor-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.mentor-modal-close:hover {
+    color: var(--brand-green);
+}
+
+.mentor-modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mentor-modal-img {
+    flex: 0 0 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-modal-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mentor-modal-info {
+    flex: 1;
+}
+
+.mentor-modal-info h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.mentor-modal-designation {
+    font-size: 16px;
+    color: var(--brand-green);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mentor-modal-role {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .mentor-modal-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .mentor-modal-img {
+        flex: 0 0 200px;
+        width: 200px;
     }
 }
