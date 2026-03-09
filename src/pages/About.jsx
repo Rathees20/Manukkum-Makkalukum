@@ -125,7 +125,7 @@ const About = () => {
 
           <div className="mission-card vision-card" data-aos="fade-left">
             <div className="mission-image-wrapper">
-              <img src="/images/p1.jpeg" alt="Our Vision" />
+              <img src="/images/ov.jpeg" alt="Our Vision" />
             </div>
             <div className="mission-content">
               <h3>Our Vision</h3>

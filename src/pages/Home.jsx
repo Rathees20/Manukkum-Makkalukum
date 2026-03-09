@@ -7,12 +7,21 @@ const Home = () => {
   const navigate = useNavigate();
 
   const heroImages = [
+    "/images/h2.jpeg",
+    "/images/h3.jpeg",
     "/images/img01 (13).jpeg",
     "/images/img2.jpeg"
   ];
 
+  const workAreaImages = [
+    "/images/pa1.jpeg",
+    "/images/pa2.jpeg",
+    "/images/pa3.jpeg"
+  ];
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWorkImage, setCurrentWorkImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   const themeCards = 3; // Total number of theme cards
@@ -49,6 +58,18 @@ const Home = () => {
     return () => clearInterval(timer);
   }, [isMobile, themeCards]);
 
+  const handlePrevWorkImage = () => {
+    setCurrentWorkImage((prev) =>
+      prev === 0 ? workAreaImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextWorkImage = () => {
+    setCurrentWorkImage((prev) =>
+      prev === workAreaImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <div className="page" id="home">
       <section className="hero">
@@ -59,9 +80,9 @@ const Home = () => {
               src={heroImages[currentImageIndex]}
               alt="Nature Landscape"
               className="hero-bg-img pos-top"
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1.05 }}
-              exit={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0, scale: 1.1, y: 20 }}
+              animate={{ opacity: 1, scale: 1.05, y: 0 }}
+              exit={{ opacity: 0, scale: 1.1, y: -20 }}
               transition={{ duration: 2, ease: "easeInOut" }}
             />
           </AnimatePresence>
@@ -304,40 +325,34 @@ const Home = () => {
           </div>
         )}
       </section>
-      {/* Photo Gallery Section */}
-      <section className="photo-gallery" data-aos="fade-up">
-        <div className="section-header">
-          <h2>Photo Gallery</h2>
-          <p>Glimpses of our journey on the ground.</p>
-        </div>
-        <div className="gallery-grid">
-          <div className="gallery-item" data-aos="zoom-in">
-            <img src="/images/p1.jpeg" alt="Nature 1" />
-          </div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-            <img src="/images/p2.jpeg" alt="Nature 2" />
-          </div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/images/p3.jpeg" alt="Nature 3" />
-          </div>
-          <div className="gallery-item special-focus" data-aos="zoom-in" data-aos-delay="300">
-            <img src="/images/p4.jpeg" alt="Nature 4" />
-          </div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-            <img src="/images/p5.jpeg" alt="Nature 5" />
-          </div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80" alt="Nature 6" />
-          </div>
-        </div>
-      </section>
-
 
       {/* Primary Work Areas Section */}
       <section className="primary-work-areas" data-aos="fade-up">
         <div className="work-areas-content">
           <div className="work-areas-header">
-            <span className="leaf-icon">🍃</span>
+            <span className="work-areas-icon-simple" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                className="work-areas-icon-simple-svg"
+              >
+                <path
+                  d="M5 19c4.5 0 8.5-2.5 10.7-6.3C17.8 10.2 18.5 7.8 19 5.5 16.7 6 14.3 6.2 12 6.9 8.2 8.1 5 11.2 5 15v4z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 14c1-.3 2.2-1.2 3-2.3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
             <h2>Primary Work Areas</h2>
           </div>
 
@@ -346,9 +361,6 @@ const Home = () => {
             welfare of the people. We focus on large-scale tree plantation,
             protection of existing trees, restoration of water bodies, and
             conservation of biodiversity to rebuild a balanced ecosystem.
-          </p>
-
-          <p>
             Through community participation, environmental awareness, and
             sustainable rural development initiatives, we encourage every
             household to become an environmental activist. By combining
@@ -358,10 +370,40 @@ const Home = () => {
         </div>
 
         <div className="work-areas-image">
-          <img
-            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
-            alt="Tree plantation and sustainable agriculture"
-          />
+          <div className="work-areas-slider">
+            <button
+              type="button"
+              className="work-areas-arrow work-areas-arrow-left"
+              onClick={handlePrevWorkImage}
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            <img
+              src={workAreaImages[currentWorkImage]}
+              alt="Tree plantation and sustainable agriculture"
+            />
+            <button
+              type="button"
+              className="work-areas-arrow work-areas-arrow-right"
+              onClick={handleNextWorkImage}
+              aria-label="Next image"
+            >
+              ›
+            </button>
+            <div className="work-areas-dots">
+              {workAreaImages.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={`work-areas-dot ${index === currentWorkImage ? "active" : ""
+                    }`}
+                  onClick={() => setCurrentWorkImage(index)}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

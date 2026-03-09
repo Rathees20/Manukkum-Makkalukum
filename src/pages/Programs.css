@@ -9,6 +9,17 @@
   margin-right: calc(50% - 50vw);
 }
 
+.programs-initiatives .section-header {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding-left: 0;
+}
+
+.programs-initiatives .section-header p {
+  margin-top: 8px;
+}
+
 .programs-tabs {
   display: flex;
   justify-content: center;
@@ -97,6 +108,15 @@
 
 .program-card:hover .program-image img {
   transform: scale(1.05);
+}
+
+/* Fine-tuning specific blog images */
+.program-image img[src$="s1.jpeg"] {
+  object-position: center 30%;
+}
+
+.program-image img[src$="s4.jpeg"] {
+  object-position: center 60%;
 }
 
 .program-info {

@@ -111,7 +111,7 @@
 }
 
 .mission-section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     background-color: #fdfdfd;
     overflow: hidden;
 }
@@ -119,7 +119,7 @@
 .mission-intro {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 50px;
 }
 
 .mission-intro .subtitle {
@@ -129,18 +129,18 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 13px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .mission-intro h2 {
-    font-size: 36px;
+    font-size: 42px;
     color: #1a1a1a;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 800;
 }
 
 .mission-intro .tagline {
-    font-size: 18px;
+    font-size: 20px;
     color: #666;
     font-style: italic;
     font-weight: 400;
@@ -149,15 +149,15 @@
 .mission-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1000px;
+    gap: 40px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
 /* Elevated Green Outlayer Card Design - Horizontal Layout */
 .mission-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 40px;
     overflow: hidden;
     position: relative;
     /* Stronger Green Outlayer */
@@ -186,8 +186,8 @@
 .mission-image-wrapper {
     width: 100%;
     /* Full width for image at top */
-    height: 320px;
-    /* Increased height for proper view */
+    height: 250px;
+    /* Even shorter height for horizontal proportion */
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -196,8 +196,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
-    /* Focus on top portion of image */
+    object-position: center center;
+    /* Center focal point */
     transition: transform 0.6s ease;
 }
 
@@ -208,18 +208,18 @@
 .mission-content {
     width: 100%;
     /* Full width for content below image */
-    padding: 30px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .mission-content h3 {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--brand-green-dark);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .mission-content h3::after {
@@ -233,7 +233,7 @@
 }
 
 .mission-content p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
     color: #555;
 }
@@ -248,20 +248,20 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    margin-bottom: 18px;
-    font-size: 16px;
+    margin-bottom: 15px;
+    font-size: 14px;
     color: #555;
 }
 
 .vision-list .icon {
-    font-size: 20px;
+    font-size: 16px;
     background: #f0f9f1;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 10px;
     flex-shrink: 0;
 }
 
@@ -402,43 +402,45 @@
 
 .mentor-card {
     text-align: center;
-    background: white;
-    padding: 0;
-    border-radius: 20px;
-    border: 2px solid var(--border-soft);
-    /* Increased density from 1px to 2px */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    flex: 0 1 calc(25% - 23px);
-    /* Fit 4 cards per row (gap is 30px) */
+    background: #f7fbf8;
+    /* Light brand green inside bg */
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    flex: 0 1 calc(33.333% - 20px);
     width: 100%;
     overflow: hidden;
-    min-width: 250px;
-    /* Ensure cards don't get too small */
+    min-width: 280px;
     cursor: pointer;
+    position: relative;
 }
 
 .mentor-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    border-color: var(--brand-green);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.12);
+    border-color: rgba(76, 175, 80, 0.3);
+    background: #e8f5e9;
+    /* Slightly deeper green on hover */
 }
 
 .mentor-img-container {
     width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    border-radius: 0;
-    margin: 0;
-    border: 8px solid transparent;
-    /* Increased density from 4px to 8px */
-    transition: all 0.3s ease;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    margin-bottom: 20px;
     position: relative;
     overflow: hidden;
+    background: #f9f9f9;
+    /* Elegant outer glow placeholder */
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    transition: all 0.4s ease;
 }
 
 .mentor-card:hover .mentor-img-container {
-    border-color: var(--brand-green);
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+    transform: scale(1.02);
 }
 
 .mentor-img-container img {
@@ -446,52 +448,83 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.4s ease;
+    transition: transform 0.6s ease;
 }
 
-.mentor-card:hover img {
-    transform: scale(1.05);
+.mentor-card:hover .mentor-img-container img {
+    transform: scale(1.1);
+}
+
+/* Specific elegant zoom-out for 2nd mentor card - Matching background for seamless "uncut" look */
+.mentor-grid .mentor-card:nth-child(2) .mentor-img-container {
+    padding: 0;
+    background: #e2dfd9;
+    /* Deep beige matching the image background */
+}
+
+.mentor-grid .mentor-card:nth-child(2) .mentor-img-container img {
+    object-fit: cover;
+    object-position: center top;
+    transform: scale(1.0);
+    /* Subtle zoom out without cuts */
+    background: #e2dfd9;
+}
+
+.mentor-grid .mentor-card:nth-child(2):hover .mentor-img-container img {
+    transform: scale(1.0);
+}
+
+/* Specific green styling for 3rd mentor card */
+.mentor-grid .mentor-card:nth-child(3) .mentor-img-container {
+    background: #f1f8f2;
+    /* Soft brand-relevant green */
+}
+
+.mentor-grid .mentor-card:nth-child(3) .mentor-img-container img {
+    background: #f1f8f2;
+}
+
+.mentor-grid .mentor-card:nth-child(3) .mentor-details {
+    background: #f7fbf8;
+    /* Very subtle green tint for content area */
 }
 
 .mentor-details {
-    padding: 20px;
-    background-color: white;
-    transition: background-color 0.3s ease;
+    padding: 5px 0;
+    transition: background-color 0.4s ease;
 }
 
 .mentor-card:hover .mentor-details {
-    background-color: #f0f9f1;
-    /* Light brand green */
+    background: transparent !important;
 }
 
-.mentor-card h4 {
-    margin: 0 0 4px;
-    color: #333;
-    font-size: 18px;
+.mentor-details h4 {
+    margin: 0 0 6px;
+    color: #1a1a1a;
+    font-size: 20px;
     font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.mentor-card:hover .mentor-details h4 {
+    color: var(--brand-green-dark);
 }
 
 .mentor-designation {
-    font-size: 13px;
-    color: var(--brand-green);
-    margin-bottom: 6px !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
-.mentor-role {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.4;
-}
 
 .no-image-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 400px;
-    /* Match height of cards with images roughly */
+    background: #fdfdfd;
 }
 
 .no-image-card .mentor-details {
@@ -504,17 +537,14 @@
 
 .no-image-card h4 {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: var(--brand-green-dark);
 }
 
 .no-image-card .mentor-designation {
     font-size: 15px;
-    margin-bottom: 15px !important;
-}
-
-.no-image-card .mentor-role {
-    font-size: 15px;
-    color: #444;
+    color: #555;
+    font-weight: 600;
 }
 
 
