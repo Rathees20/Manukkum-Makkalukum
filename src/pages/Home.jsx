@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Leaf } from "lucide-react";
 import "./Home.css";
 
 const Home = () => {
@@ -10,7 +11,6 @@ const Home = () => {
     "/images/h2.jpeg",
     "/images/h3.jpeg",
     "/images/img01 (13).jpeg",
-    "/images/img2.jpeg"
   ];
 
   const workAreaImages = [
@@ -162,13 +162,31 @@ const Home = () => {
       </section>
       {/* Focus Themes Section */}
       <section className="focus-themes" data-aos="fade-up">
-        <div className="section-header">
-          <h2>
-            Our Mission & Themes <span className="leaf-icon-small">🍃</span>
-          </h2>
-          <p className="section-subtitle">
-            "Every household should become an environmental activist!"
-          </p>
+        <div className="work-areas-header">
+          <span className="work-areas-icon-simple" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              className="work-areas-icon-simple-svg"
+            >
+              <path
+                d="M5 19c4.5 0 8.5-2.5 10.7-6.3C17.8 10.2 18.5 7.8 19 5.5 16.7 6 14.3 6.2 12 6.9 8.2 8.1 5 11.2 5 15v4z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M9 14c1-.3 2.2-1.2 3-2.3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <h2>Our Mission & Themes</h2>
         </div>
 
 
@@ -190,7 +208,6 @@ const Home = () => {
                 we work to revive the natural strength of the land and ensure food and water
                 security for future generations.
               </p>
-              <button className="btn-read-more">Read More</button>
             </div>
 
             {/* Theme 2 */}
@@ -208,7 +225,6 @@ const Home = () => {
                 trees and increasing green cover ensures balanced rainfall, cleaner air,
                 and a healthier ecosystem.
               </p>
-              <button className="btn-read-more">Read More</button>
             </div>
 
             {/* Theme 3 */}
@@ -226,7 +242,6 @@ const Home = () => {
                 communities, we aim to reduce poverty and create a sustainable future
                 where both land and people thrive together.
               </p>
-              <button className="btn-read-more">Read More</button>
             </div>
           </div>
         )}

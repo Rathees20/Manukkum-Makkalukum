@@ -45,9 +45,31 @@ const Counter = ({ value }) => {
 const Impact = () => {
   return (
     <div className="page section" id="impact">
-      <div className="section-header" data-aos="fade-up">
+      <div className="work-areas-header" data-aos="fade-up">
+        <span className="work-areas-icon-simple" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            className="work-areas-icon-simple-svg"
+          >
+            <path
+              d="M5 19c4.5 0 8.5-2.5 10.7-6.3C17.8 10.2 18.5 7.8 19 5.5 16.7 6 14.3 6.2 12 6.9 8.2 8.1 5 11.2 5 15v4z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M9 14c1-.3 2.2-1.2 3-2.3"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
         <h2>Our Growing Impact</h2>
-        <p>Small acts, repeated everywhere.</p>
       </div>
 
       <div className="impact-grid">
