@@ -116,7 +116,7 @@ const About = () => {
               <h3>Our Story</h3>
               <p>
                 Inspired by the vision of improving both <strong>the wealth of the soil</strong> and
-                <strong> the welfare of the people</strong>, Actor M. Soundara Raja helped
+                <strong> the welfare of the people</strong>, Actor M. Soundara Raja and team helped
                 pioneer this movement. We are more than an organization; we are a growing
                 collective of nature lovers.
               </p>
@@ -132,7 +132,7 @@ const About = () => {
               <ul className="vision-list">
                 <li>
                   <span className="icon"><GiPlantRoots /></span>
-                  <span>Regenerate degraded lands with native species</span>
+                  <span>Prioritize soil protection and regenerate degraded lands</span>
                 </li>
                 <li>
                   <span className="icon"><GiWheat /></span>

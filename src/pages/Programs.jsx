@@ -1,4 +1,6 @@
 import React from "react";
+import { X, Calendar, User, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Programs.css";
 
 const Programs = () => {
@@ -62,8 +64,7 @@ const Programs = () => {
               <div className="program-info">
                 <span className="card-tag">Our Events</span>
                 <h3>Annual Tree Planting Drive</h3>
-                <p>Join us this weekend for our biggest plantation drive of the year...</p>
-                <button className="btn-card">Register</button>
+                <p>Join us this weekend for our biggest plantation drive of the year.</p>
               </div>
             </div>
             <div className="program-card">
@@ -73,8 +74,7 @@ const Programs = () => {
               <div className="program-info">
                 <span className="card-tag">Our Events</span>
                 <h3>Wildlife Awareness Workshop</h3>
-                <p>An educational session on co-existing with local wildlife...</p>
-                <button className="btn-card">Register</button>
+                <p>An educational session on co-existing with local wildlife.</p>
               </div>
             </div>
             <div className="program-card">
@@ -84,8 +84,7 @@ const Programs = () => {
               <div className="program-info">
                 <span className="card-tag">Our Events</span>
                 <h3>Community Clean-up Initiative</h3>
-                <p>Join hands with us to create cleaner, greener communities...</p>
-                <button className="btn-card">Register</button>
+                <p>Join hands with us to create cleaner, greener communities.</p>
               </div>
             </div>
           </div>
@@ -144,18 +143,41 @@ const Programs = () => {
         {renderContent()}
       </div>
 
-      {showPopup && selectedBlog && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={() => setShowPopup(false)}>&times;</button>
-            <div className="popup-body">
-              <img src={selectedBlog.image} alt={selectedBlog.title} />
-              <h2>{selectedBlog.title}</h2>
-              <p>{selectedBlog.fullContent}</p>
-            </div>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {showPopup && selectedBlog && (
+          <motion.div
+            className="popup-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowPopup(false)}
+          >
+            <motion.div
+              className="popup-content"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="close-button" onClick={() => setShowPopup(false)}>
+                <X size={20} />
+              </button>
+
+              <div className="popup-image-header">
+                <img src={selectedBlog.image} alt={selectedBlog.title} />
+                <div className="popup-category-badge">Blog</div>
+              </div>
+
+              <div className="popup-body">
+                <h2>{selectedBlog.title}</h2>
+                <div className="popup-divider"></div>
+                <p className="full-text">{selectedBlog.fullContent}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
