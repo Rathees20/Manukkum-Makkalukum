@@ -75,7 +75,7 @@ const Impact = () => {
       <div className="impact-grid">
         <div className="impact-card" data-aos="zoom-in" data-aos-delay="100">
           <div className="impact-number">
-            <Counter value="25,000+" />
+            <Counter value="1 lakh+" />
           </div>
           <div className="impact-label">Saplings Planted</div>
           <p>Across schools, villages, and public spaces.</p>
@@ -89,7 +89,7 @@ const Impact = () => {
         </div>
         <div className="impact-card" data-aos="zoom-in" data-aos-delay="300">
           <div className="impact-number">
-            <Counter value="1,500+" />
+            <Counter value="500+" />
           </div>
           <div className="impact-label">Volunteers</div>
           <p>Students, farmers, fans, and nature lovers.</p>

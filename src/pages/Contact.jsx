@@ -53,6 +53,12 @@ const Contact = () => {
                 <span>Trichy</span>
                 <span>Salem</span>
                 <span>Thanjavur</span>
+                <span>Theni</span>
+                <span>Thenkasi</span> 
+                <span>Dindigul</span>
+                <span>Vilupuram</span>
+                <span>Pondicherry</span>
+
               </div>
             </div>
 
