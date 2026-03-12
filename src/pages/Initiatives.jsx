@@ -7,7 +7,7 @@ const protests = [
     {
         id: 1,
         year: "2017",
-        title: "Jallikattu Protest – Madurai",
+        title: "Jallikattu – Madurai",
         tag: "Cultural Rights",
         tagColor: "#1a5d1a",
         icon: <Shield size={22} />,
@@ -40,24 +40,24 @@ const protests = [
     {
         id: 4,
         year: "Mar 2017",
-        title: "Jantar Mantar Farmers' Protest – New Delhi",
+        title: "Jallikattu Protest – Madurai",
         tag: "National Advocacy",
         tagColor: "#348a34",
         icon: <Landmark size={22} />,
         img: "/images/g15.jpeg",
         description:
-            "Members of MM Trust participated in the farmers' protest at Jantar Mantar, New Delhi in March 2017, and supported Tamil Nadu farmers in meeting Union Ministers Arun Jaitley and Nitin Gadkari to represent their critical demands at the national level.",
+            "jallikattu protest in Madurai on 16th January 2017, supporting the cultural rights of Tamil people and igniting a nationwide conversation about the preservation of Tamil heritage.",
     },
     {
         id: 5,
         year: "Ongoing",
-        title: "Cauvery Water Dispute Protests",
+        title: "Jantar Mantar Farmers' Protest ",
         tag: "Water Rights",
         tagColor: "#f4ce14",
         icon: <Droplets size={22} />,
         img: "/images/i5.jpeg",
         description:
-            "MM Trust stood firmly with farmers during the Cauvery water dispute protests, supporting Tamil Nadu farmers in their fight for fair water distribution and ensuring their voices reached the corridors of decision-making.",
+            "MM Trust continues to support the ongoing farmers' protest at Jantar Mantar, advocating for water rights and sustainable agriculture, and standing in solidarity with farmers demanding fair policies and protections for their livelihoods.",
     },
 ];
 
